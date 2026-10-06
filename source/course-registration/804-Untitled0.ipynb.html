@@ -1,0 +1,270 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Untitled0.ipynb | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/course-registration.html">← Back to project</a><h1 class="source-title">Untitled0.ipynb</h1><a class="download" href="../../files/course-registration/804-Untitled0.ipynb" download>Download original · IPYNB</a><p class="file-intro">Notebook source cells are shown below. Download the original notebook for saved outputs and attachments.</p><h2>Cell 1 · code</h2><pre class="code">import sqlite3
+
+DB_NAME = &quot;college.db&quot;
+
+def create_connection():
+    conn = sqlite3.connect(DB_NAME)
+    return conn
+
+
+def create_tables(conn):
+    cursor = conn.cursor()
+
+    cursor.execute(&quot;&quot;&quot;
+    CREATE TABLE IF NOT EXISTS students (
+        sid INTEGER PRIMARY KEY,
+        sname TEXT NOT NULL
+    );
+    &quot;&quot;&quot;)
+
+    cursor.execute(&quot;&quot;&quot;
+    CREATE TABLE IF NOT EXISTS courses (
+        cid INTEGER PRIMARY KEY,
+        cname TEXT NOT NULL,
+        credits INTEGER NOT NULL
+    );
+    &quot;&quot;&quot;)
+
+    cursor.execute(&quot;&quot;&quot;
+    CREATE TABLE IF NOT EXISTS enrollments (
+        sid INTEGER NOT NULL,
+        cid INTEGER NOT NULL,
+        PRIMARY KEY (sid, cid),
+        FOREIGN KEY (sid) REFERENCES students(sid),
+        FOREIGN KEY (cid) REFERENCES courses(cid)
+    );
+    &quot;&quot;&quot;)
+
+    conn.commit()
+
+
+def insert_sample_data(conn):
+    cursor = conn.cursor()
+
+    students = [
+        (1001, &quot;Alice Johnson&quot;),
+        (1002, &quot;Bob Smith&quot;),
+        (1003, &quot;Charlie Brown&quot;),
+        (1004, &quot;Diana Lee&quot;),
+        (1005, &quot;Ethan Davis&quot;)
+    ]
+
+    courses = [
+        (2001, &quot;Database Systems&quot;, 3),
+        (2002, &quot;Computer Networks&quot;, 3),
+        (2003, &quot;Data Structures&quot;, 4),
+        (2004, &quot;Operating Systems&quot;, 4),
+        (2005, &quot;Software Engineering&quot;, 3)
+    ]
+
+    enrollments = [
+        (1001, 2001),
+        (1001, 2003),
+        (1002, 2001),
+        (1003, 2002),
+        (1003, 2003),
+        (1003, 2004),
+        (1004, 2002),
+        (1004, 2005),
+        (1005, 2001),
+        (1005, 2005),
+        (1005, 2002),
+        (1005, 2003),
+        (1005, 2004)
+    ]
+
+    cursor.executemany(&quot;INSERT OR IGNORE INTO students VALUES (?, ?)&quot;, students)
+    cursor.executemany(&quot;INSERT OR IGNORE INTO courses VALUES (?, ?, ?)&quot;, courses)
+    cursor.executemany(&quot;INSERT OR IGNORE INTO enrollments VALUES (?, ?)&quot;, enrollments)
+
+    conn.commit()
+
+
+# -------- NEW FUNCTION TO SHOW STUDENTS --------
+def show_students(conn):
+    cursor = conn.cursor()
+
+    cursor.execute(&quot;&quot;&quot;
+        SELECT students.sid, students.sname, COUNT(enrollments.cid)
+        FROM students
+        LEFT JOIN enrollments
+        ON students.sid = enrollments.sid
+        GROUP BY students.sid, students.sname
+    &quot;&quot;&quot;)
+
+    rows = cursor.fetchall()
+
+    print(&quot;\n--- STUDENTS CURRENTLY IN SYSTEM ---&quot;)
+    print(&quot;Student ID | Name | # of Classes&quot;)
+    print(&quot;-----------------------------------&quot;)
+
+    for row in rows:
+        print(f&quot;{row[0]} | {row[1]} | {row[2]}&quot;)
+# --------------------------------------
+
+
+def get_or_create_student(conn):
+    cursor = conn.cursor()
+
+    while True:
+        # SHOW STUDENTS FIRST
+        show_students(conn)
+
+        sid = int(input(&quot;\nEnter student ID (-1 for new student): &quot;))
+
+        if sid == -1:
+            new_sid = int(input(&quot;Enter new student ID: &quot;))
+            name = input(&quot;Enter student name: &quot;)
+
+            cursor.execute(&quot;INSERT INTO students VALUES (?, ?)&quot;, (new_sid, name))
+            conn.commit()
+
+            print(&quot;New student created.&quot;)
+            return new_sid
+
+        cursor.execute(&quot;SELECT * FROM students WHERE sid = ?&quot;, (sid,))
+        student = cursor.fetchone()
+
+        if student:
+            print(&quot;Welcome,&quot;, student[1])
+            return sid
+        else:
+            print(&quot;Student not found.&quot;)
+
+
+def list_courses(conn):
+    cursor = conn.cursor()
+
+    cursor.execute(&quot;SELECT * FROM courses&quot;)
+    rows = cursor.fetchall()
+
+    print(&quot;\nAll Courses:&quot;)
+    for row in rows:
+        print(row)
+
+
+def enroll_in_course(conn, sid):
+    cursor = conn.cursor()
+
+    cid = int(input(&quot;Enter course ID to enroll: &quot;))
+
+    cursor.execute(&quot;SELECT * FROM enrollments WHERE sid = ? AND cid = ?&quot;, (sid, cid))
+    exists = cursor.fetchone()
+
+    if exists:
+        print(&quot;Already enrolled in that course.&quot;)
+        return
+
+    cursor.execute(&quot;INSERT INTO enrollments VALUES (?, ?)&quot;, (sid, cid))
+    conn.commit()
+
+    print(&quot;Enrollment successful.&quot;)
+
+
+def withdraw_from_course(conn, sid):
+    cursor = conn.cursor()
+
+    cid = int(input(&quot;Enter course ID to withdraw: &quot;))
+
+    cursor.execute(&quot;SELECT * FROM enrollments WHERE sid = ? AND cid = ?&quot;, (sid, cid))
+    exists = cursor.fetchone()
+
+    if not exists:
+        print(&quot;You are not enrolled in that course.&quot;)
+        return
+
+    cursor.execute(&quot;DELETE FROM enrollments WHERE sid = ? AND cid = ?&quot;, (sid, cid))
+    conn.commit()
+
+    print(&quot;Withdrawal successful.&quot;)
+    my_classes(conn, sid)
+
+
+def search_courses(conn):
+    cursor = conn.cursor()
+
+    keyword = input(&quot;Enter course name keyword: &quot;)
+
+    cursor.execute(
+        &quot;SELECT * FROM courses WHERE cname LIKE ?&quot;,
+        (&#x27;%&#x27; + keyword + &#x27;%&#x27;,)
+    )
+
+    rows = cursor.fetchall()
+
+    print(&quot;\nSearch Results:&quot;)
+    for row in rows:
+        print(row)
+
+
+def my_classes(conn, sid):
+    cursor = conn.cursor()
+
+    cursor.execute(&quot;&quot;&quot;
+        SELECT courses.cid, courses.cname, courses.credits
+        FROM courses
+        JOIN enrollments
+        ON courses.cid = enrollments.cid
+        WHERE enrollments.sid = ?
+    &quot;&quot;&quot;, (sid,))
+
+    rows = cursor.fetchall()
+
+    print(&quot;\nMy Classes:&quot;)
+
+    if rows:
+        for row in rows:
+            print(row)
+    else:
+        print(&quot;No enrolled classes.&quot;)
+
+
+def main_menu(conn, sid):
+    while True:
+        print(&quot;\n--- MAIN MENU ---&quot;)
+        print(&quot;L - List Courses&quot;)
+        print(&quot;E - Enroll&quot;)
+        print(&quot;W - Withdraw&quot;)
+        print(&quot;S - Search&quot;)
+        print(&quot;M - My Classes&quot;)
+        print(&quot;X - Exit&quot;)
+
+        choice = input(&quot;Choose option: &quot;).upper()
+
+        if choice == &quot;L&quot;:
+            list_courses(conn)
+
+        elif choice == &quot;E&quot;:
+            enroll_in_course(conn, sid)
+
+        elif choice == &quot;W&quot;:
+            withdraw_from_course(conn, sid)
+
+        elif choice == &quot;S&quot;:
+            search_courses(conn)
+
+        elif choice == &quot;M&quot;:
+            my_classes(conn, sid)
+
+        elif choice == &quot;X&quot;:
+            print(&quot;Goodbye.&quot;)
+            break
+
+        else:
+            print(&quot;Invalid option.&quot;)
+
+
+def main():
+    conn = create_connection()
+    create_tables(conn)
+    insert_sample_data(conn)
+
+    sid = get_or_create_student(conn)
+
+    main_menu(conn, sid)
+
+    conn.close()
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task4Hoang.rkt | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/programming-paradigms.html">← Back to project</a><h1 class="source-title">Task4Hoang.rkt</h1><a class="download" href="../../files/programming-paradigms/773-Task4Hoang.rkt" download>Download original · RKT</a><pre class="code">#lang racket
+
+;; Q1
+(define (delall a lst)
+  (cond
+    ((empty? lst) &#x27;()) ; base case: empty list
+    ((list? (car lst)) ; if first element is a sublist
+     (cons (delall a (car lst))
+           (delall a (cdr lst))))
+    ((equal? a (car lst)) ; if it matches the atom, remove it
+     (delall a (cdr lst)))
+    (else ; otherwise keep it
+     (cons (car lst) (delall a (cdr lst))))))
+
+;; Q2
+(define (getextremes lst)
+  (cond
+    ((empty? (cdr lst)) (list (car lst) (car lst))) ; one element
+    (else
+     (let ((rest (getextremes (cdr lst))))
+       (list
+        (if (&gt; (car lst) (car rest)) (car lst) (car rest)) ; max
+        (if (&lt; (car lst) (cadr rest)) (car lst) (cadr rest)))))))
+
+;; Q3
+(define (unite s1 s2)
+  (cond
+    ((empty? s1) s2)
+    ((contains? (car s1) s2)
+     (unite (cdr s1) s2))
+    (else
+     (cons (car s1) (unite (cdr s1) s2)))))
+
+;; Q4
+(define (checkset lst)
+  (cond
+    ((empty? lst) #t) ; empty list is a set
+    ((contains? (car lst) (cdr lst)) #f) ; duplicate found
+    (else (checkset (cdr lst))))) ; continue checking
+</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

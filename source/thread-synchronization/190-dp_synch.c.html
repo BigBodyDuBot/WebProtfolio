@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>dp_synch.c | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/thread-synchronization.html">← Back to project</a><h1 class="source-title">dp_synch.c</h1><a class="download" href="../../files/thread-synchronization/190-dp_synch.c" download>Download original · C</a><pre class="code">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;unistd.h&gt;
+
+#define NUM_PHIL 5 
+#define LEFT(i) ((i + NUM_PHIL - 1) % NUM_PHIL)
+#define RIGHT(i) ((i + 1) % NUM_PHIL)
+typedef enum { THINKING, HUNGRY, EATING } State;
+
+pthread_mutex_t mutex;
+pthread_cond_t condition[NUM_PHIL];
+State state[NUM_PHIL];
+
+void eat(int i) {
+    printf(&quot;Philosopher %d is eating.\n&quot;, i);
+    sleep(rand() % 2 + 1);
+    printf(&quot;Philosopher %d finished eating and put down chopsticks.\n&quot;, i);
+}
+
+void test(int i) {
+	//Please implement here
+	if(state[i] == HUNGRY &amp;&amp;
+	state[LEFT(i)] != EATING &amp;&amp;
+	state[RIGHT(i)] != EATING) {
+
+	state[i] = EATING;
+        pthread_cond_signal(&amp;condition[i]);
+}
+}
+
+void pickup(int i) {
+	//Please implement here
+	pthread_mutex_lock(&amp;mutex);
+
+	state[i] = HUNGRY;
+	test(i);
+
+	while(state[i] != EATING){
+    	pthread_cond_wait(&amp;condition[i], &amp;mutex);
+}
+	pthread_mutex_unlock(&amp;mutex);
+}
+
+void putdown(int i) {
+	//Please implement here
+	pthread_mutex_lock(&amp;mutex);
+
+	state[i] = THINKING;
+
+	//neighbors try to eat
+	test(LEFT(i));
+	test(RIGHT(i));
+
+	pthread_mutex_unlock(&amp;mutex);
+}
+
+
+
+
+void *philosopher(void *num) {
+    int i = *(int *)num;
+    while (1) {
+        printf(&quot;Philosopher %d is thinking...\n&quot;, i);
+        sleep(rand() % 3 + 1);
+       
+        pickup(i);
+        eat(i);
+        putdown(i);
+    }
+}
+
+
+int main() {
+    pthread_t thread_id[NUM_PHIL];
+    int phil_id[NUM_PHIL];
+   
+    pthread_mutex_init(&amp;mutex, NULL);
+    for (int i = 0; i &lt; NUM_PHIL; i++) {
+        pthread_cond_init(&amp;condition[i], NULL);
+        state[i] = THINKING;
+        phil_id[i] = i;
+        pthread_create(&amp;thread_id[i], NULL, philosopher, &amp;phil_id[i]);
+    }
+
+    for (int i = 0; i &lt; NUM_PHIL; i++) {
+        pthread_join(thread_id[i], NULL);
+    }
+
+    pthread_mutex_destroy(&amp;mutex);
+    for (int i = 0; i &lt; NUM_PHIL; i++) {
+        pthread_cond_destroy(&amp;condition[i]);
+    }
+   
+    return 0;
+}
+</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

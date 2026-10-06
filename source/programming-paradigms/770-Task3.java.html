@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task3.java | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/programming-paradigms.html">← Back to project</a><h1 class="source-title">Task3.java</h1><a class="download" href="../../files/programming-paradigms/770-Task3.java" download>Download original · JAVA</a><pre class="code">public class Task3 {
+    public static void main(String[] args) {
+        int n = 4;
+
+        int[][] x = {
+            {0, 0, 0, 0},
+            {1, 0, 0, 0},
+            {0, 2, 0, 0},
+            {3, 4, 5, 6}
+        };
+
+        boolean found = false;
+
+        for (int i = 0; i &lt; n; i++) {
+            boolean allZero = true;
+
+            for (int j = 0; j &lt; n; j++) {
+                if (x[i][j] != 0) {
+                    allZero = false;
+                    break;
+                }
+            }
+
+            if (allZero) {
+                System.out.println(&quot;First all-zero row is: &quot; + i);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println(&quot;No all-zero row found.&quot;);
+        }
+    }
+}</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

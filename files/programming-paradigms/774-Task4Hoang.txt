@@ -1,0 +1,9 @@
+﻿Duy Hoang
+CSIT 313
+HW4
+
+
+Starting with Racket threw me off compared to how things work in Java or C. What stood out most was the move toward functions, where recursion shapes every step instead of step-by-step commands. Instead of using for loops or updating variables, I had to think in terms of breaking problems into smaller parts and calling the function again on those smaller pieces. No more relying on loops or changing values over time. At first, this was confusing because I am used to controlling the flow of a program with loops and assignments. In Racket, there is less focus on changing values and more focus on computing results directly. However, once I understood how recursion works, I started to see how clean and structured the solutions could be.
+
+
+What tripped me up most was getting my head around recursive thinking plus wrapping my mind around list operations - car, cdr, and cons. Figuring out bugs felt tougher too, since tossing in print statements mid-step, something I lean on in Java, wasn’t really an option here. Still, certain parts flowed better. I did not have to worry about variable types or complicated syntax. Overall, Racket changed the way I think about programming by forcing me to focus more on problem decomposition rather than step-by-step execution.

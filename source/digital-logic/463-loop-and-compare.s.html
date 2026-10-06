@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>loop and compare.s | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/digital-logic.html">← Back to project</a><h1 class="source-title">loop and compare.s</h1><a class="download" href="../../files/digital-logic/463-loop-and-compare.s" download>Download original · S</a><pre class="code">.global _start
+_start:
+	
+	mov r0, #3
+	mov r1, #3
+	//compare = cmp
+	loop:
+	cmp r0, #5 //no need for destination register value stored at cpsr
+	
+	BGE exit
+	
+	add r0, r0, #1
+	B loop
+	
+exit:
+	
+	
+
+</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

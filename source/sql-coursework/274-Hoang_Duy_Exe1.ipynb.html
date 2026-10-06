@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hoang_Duy_Exe1.ipynb | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/sql-coursework.html">← Back to project</a><h1 class="source-title">Hoang_Duy_Exe1.ipynb</h1><a class="download" href="../../files/sql-coursework/274-Hoang_Duy_Exe1.ipynb" download>Download original · IPYNB</a><p class="file-intro">Notebook source cells are shown below. Download the original notebook for saved outputs and attachments.</p><h2>Cell 1 · markdown</h2><pre class="code">Class 6 Exercise: Creating Tables and Simple Queries
+===========================================</pre><h2>Cell 2 · code</h2><pre class="code">!pip uninstall -y prettytable
+!pip install prettytable==3.9.0</pre><h2>Cell 3 · markdown</h2><pre class="code">Let&#x27;s connect to the database class6.db</pre><h2>Cell 4 · code</h2><pre class="code">from google.colab import drive
+drive.mount(&#x27;/content/drive&#x27;)</pre><h2>Cell 5 · code</h2><pre class="code">pwd</pre><h2>Cell 6 · code</h2><pre class="code"># %reload_ext sql
+%load_ext sql
+%sql sqlite:////content/drive/MyDrive/colab2/exercise/class6.db</pre><h2>Cell 7 · markdown</h2><pre class="code">### Display the tables in the database class6.db
+There are 3 tables in class6.db:
+
+1. product(&lt;u&gt;pname&lt;/u&gt; : varchar, Price: real, category: varchar, manufacturer:varchar)
+
+2. company(&lt;u&gt;cname&lt;/u&gt;: varchar, stock: integer, country: varchar)
+
+
+3. sailors(&lt;u&gt;sid&lt;/u&gt;:integer, sname:string, rating:integer, age:real)
+
+4. reserves(&lt;u&gt;sid&lt;/u&gt;:integer, &lt;u&gt;bid&lt;/u&gt;:integer, day:date)
+
+5. boats(&lt;u&gt;bid&lt;/u&gt;:integer, bname:string, color:string)
+</pre><h2>Cell 8 · code</h2><pre class="code">%%sql
+SELECT *
+FROM product</pre><h2>Cell 9 · code</h2><pre class="code">%%sql
+SELECT *
+FROM company</pre><h2>Cell 10 · code</h2><pre class="code">%%sql
+SELECT *
+FROM sailors</pre><h2>Cell 11 · code</h2><pre class="code">%%sql
+SELECT *
+FROM reserves</pre><h2>Cell 12 · code</h2><pre class="code">%%sql
+SELECT *
+FROM boats</pre><h2>Cell 13 · markdown</h2><pre class="code">### Example 1
+ Find names of sailors who’ve reserved boat #103</pre><h2>Cell 14 · code</h2><pre class="code">%%sql
+SELECT S.sname
+FROM Sailors S
+JOIN Reserves R ON S.sid = R.sid
+WHERE R.bid=103;</pre><h2>Cell 15 · markdown</h2><pre class="code">### Example 2
+Find names of sailors whose rating are larger than 7 and have reserved a red boat. List each matching sailor name once.</pre><h2>Cell 16 · code</h2><pre class="code">%%sql
+SELECT DISTINCT S.sname
+FROM Sailors S
+JOIN Reserves R ON S.sid = R.sid
+JOIN Boats B ON R.bid = B.bid
+WHERE S.rating &gt; 7 AND B.color = &#x27;red&#x27;;</pre><h2>Cell 17 · markdown</h2><pre class="code">### Exercise 1
+
+Find all products under $200 manufactured in Japan, and return their names and prices.
+
+product(&lt;u&gt;pname&lt;/u&gt; : varchar, Price: real, category: varchar, manufacturer:varchar)
+
+company(&lt;u&gt;cname&lt;/u&gt;: varchar, stock: integer, country: varchar)</pre><h2>Cell 18 · code</h2><pre class="code">%%sql
+SELECT P.pname, P.price
+FROM product P, company C
+WHERE P.manufacturer = C.cname and P.price &lt;200;</pre><h2>Cell 19 · markdown</h2><pre class="code">### Exercise 2
+Find sailor ids who’ve reserved a red or a green boat; list each matching sailor id once.
+
+sailors(&lt;u&gt;sid&lt;/u&gt;:integer, sname:string, rating:integer, age:real)
+
+reserves(&lt;u&gt;sid&lt;/u&gt;:integer, &lt;u&gt;bid&lt;/u&gt;:integer, day:date)
+
+boats(&lt;u&gt;bid&lt;/u&gt;:integer, bname:string, color:string)</pre><h2>Cell 20 · code</h2><pre class="code">%%sql
+SELECT DISTINCT r.sid
+FROM reserves r
+JOIN boats b ON r.bid = b.bid
+WHERE b.color = &#x27;red&#x27; OR b.color = &#x27;green&#x27;;</pre><h2>Cell 21 · markdown</h2><pre class="code">### Exercise 3
+Find sailor ids who’ve reserved a red and a green boat
+
+sailors(&lt;u&gt;sid&lt;/u&gt;:integer, sname:string, rating:integer, age:real)
+
+reserves(&lt;u&gt;sid&lt;/u&gt;:integer, &lt;u&gt;bid&lt;/u&gt;:integer, day:date)
+
+boats(&lt;u&gt;bid&lt;/u&gt;:integer, bname:string, color:string)</pre><h2>Cell 22 · code</h2><pre class="code">%%sql
+SELECT DISTINCT r1.sid
+FROM reserves r1
+JOIN boats b1 ON r1.bid = b1.bid
+JOIN reserves r2 ON r1.sid = r2.sid
+JOIN boats B2 ON r2.bid = b2.bid
+WHERE b1.color =&#x27;red&#x27; AND b2.color =&#x27;green&#x27;;</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

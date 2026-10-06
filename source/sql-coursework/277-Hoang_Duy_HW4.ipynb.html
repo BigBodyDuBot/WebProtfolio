@@ -1,0 +1,164 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hoang_Duy_HW4.ipynb | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/sql-coursework.html">← Back to project</a><h1 class="source-title">Hoang_Duy_HW4.ipynb</h1><a class="download" href="../../files/sql-coursework/277-Hoang_Duy_HW4.ipynb" download>Download original · IPYNB</a><p class="file-intro">Notebook source cells are shown below. Download the original notebook for saved outputs and attachments.</p><h2>Cell 1 · markdown</h2><pre class="code"># Database Systems
+## Homework 4 — SQL Queries
+
+---
+
+### Instructions
+This homework focuses on writing SQL queries to answer real business questions for an e-commerce platform. For each question:
+- Write your SQL query in the provided code cell
+- Run the cell to display the result
+- **`cid`, `pid`, `oid` stand for customer id, product id, and order id respectively**
+- **Note:** When joining multiple tables, the same column (e.g., `cid`, `pid`) may appear more than once in the result. In most cases, you should avoid using `SELECT *` and instead explicitly list the columns you need to prevent duplicate columns in your output.
+
+**Total Points: 40**
+
+---
+
+### Database: ShopNow E-Commerce Platform
+
+You are a data analyst at **ShopNow**, an online shopping platform. You have access to three tables:
+
+| Table | Description |
+|-------|-------------|
+| `Customers` | Stores customer profiles |
+| `Products`  | Stores product catalog |
+| `Orders`    | Stores purchase records |</pre><h2>Cell 2 · code</h2><pre class="code">!pip uninstall -y prettytable
+!pip install prettytable==3.9.0</pre><h2>Cell 3 · code</h2><pre class="code">from google.colab import drive
+drive.mount(&#x27;/content/drive&#x27;)</pre><h2>Cell 4 · code</h2><pre class="code"># Load the SQL extension and connect to HW4.db
+%load_ext sql
+%sql sqlite:////content/drive/MyDrive/colab2/HW4/HW4.db</pre><h2>Cell 5 · markdown</h2><pre class="code">---
+## Setup: Create and Populate the Database
+
+Run the three cells below to create the tables and insert all data. **Do not modify these cells.**</pre><h2>Cell 6 · code</h2><pre class="code">%%sql
+DROP TABLE IF EXISTS Customers;
+CREATE TABLE Customers (
+  cid        CHAR(10),
+  name       CHAR(30),
+  city       CHAR(20),
+  membership CHAR(10)
+);
+
+INSERT INTO Customers (cid, name, city, membership) VALUES
+  (&#x27;C001&#x27;, &#x27;Alice Wang&#x27;,  &#x27;New York&#x27;,    &#x27;Prime&#x27;),
+  (&#x27;C002&#x27;, &#x27;Bob Smith&#x27;,   &#x27;Los Angeles&#x27;, &#x27;Regular&#x27;),
+  (&#x27;C003&#x27;, &#x27;Carol Lee&#x27;,   &#x27;New York&#x27;,    &#x27;Prime&#x27;),
+  (&#x27;C004&#x27;, &#x27;David Chen&#x27;,  &#x27;Chicago&#x27;,     &#x27;Regular&#x27;);</pre><h2>Cell 7 · code</h2><pre class="code">%%sql
+DROP TABLE IF EXISTS Products;
+CREATE TABLE Products (
+  pid          CHAR(10),
+  product_name CHAR(40),
+  category     CHAR(20),
+  price        FLOAT
+);
+
+INSERT INTO Products (pid, product_name, category, price) VALUES
+  (&#x27;P101&#x27;, &#x27;Laptop&#x27;,        &#x27;Electronics&#x27;, 1200),
+  (&#x27;P102&#x27;, &#x27;Headphones&#x27;,    &#x27;Electronics&#x27;,  150),
+  (&#x27;P103&#x27;, &#x27;Running Shoes&#x27;, &#x27;Sports&#x27;,        80),
+  (&#x27;P104&#x27;, &#x27;Coffee Maker&#x27;,  &#x27;Home&#x27;,          60);</pre><h2>Cell 8 · code</h2><pre class="code">%%sql
+DROP TABLE IF EXISTS Orders;
+CREATE TABLE Orders (
+  oid        CHAR(10),
+  cid        CHAR(10),
+  pid        CHAR(10),
+  order_date CHAR(10),
+  quantity   INT
+);
+
+INSERT INTO Orders (oid, cid, pid, order_date, quantity) VALUES
+  (&#x27;O001&#x27;, &#x27;C001&#x27;, &#x27;P101&#x27;, &#x27;2024-11-15&#x27;, 1),
+  (&#x27;O002&#x27;, &#x27;C001&#x27;, &#x27;P102&#x27;, &#x27;2024-11-20&#x27;, 2),
+  (&#x27;O003&#x27;, &#x27;C003&#x27;, &#x27;P101&#x27;, &#x27;2024-12-01&#x27;, 1),
+  (&#x27;O004&#x27;, &#x27;C002&#x27;, &#x27;P103&#x27;, &#x27;2024-12-05&#x27;, 3),
+  (&#x27;O005&#x27;, &#x27;C004&#x27;, &#x27;P104&#x27;, &#x27;2024-12-10&#x27;, 1);</pre><h2>Cell 9 · markdown</h2><pre class="code">---
+## Preview the Tables
+
+Run the cells below to see the contents of all three tables before answering the questions.</pre><h2>Cell 10 · code</h2><pre class="code">%%sql
+SELECT * FROM Customers;</pre><h2>Cell 11 · code</h2><pre class="code">%%sql
+SELECT * FROM Products;</pre><h2>Cell 12 · code</h2><pre class="code">%%sql
+SELECT * FROM Orders;</pre><h2>Cell 13 · markdown</h2><pre class="code">---
+## **Q1 (4 points)**
+
+Find all customers who are located in New York and display all of their information.</pre><h2>Cell 14 · code</h2><pre class="code">%%sql
+SELECT *
+FROM Customers
+WHERE city=&#x27;New York&#x27;;
+</pre><h2>Cell 15 · markdown</h2><pre class="code">## **Q2 (4 points)**
+
+Retrieve only the product name and price of every product in the catalog.</pre><h2>Cell 16 · code</h2><pre class="code">%%sql
+SELECT product_name, price
+FROM Products;</pre><h2>Cell 17 · markdown</h2><pre class="code">## **Q3 (4 points)**
+
+Generate all combinations of customer C001&#x27;s profile with products P101 and P102. (Hint: use cross product)</pre><h2>Cell 18 · code</h2><pre class="code">%%sql
+SELECT *
+FROM
+    (SELECT * FROM Customers WHERE cid = &#x27;C001&#x27;) ,
+    (SELECT * FROM Products WHERE pid IN (&#x27;P101&#x27;, &#x27;P102&#x27;)) ;</pre><h2>Cell 19 · markdown</h2><pre class="code">## **Q4 (4 points)**
+
+Find all orders where the quantity is greater than 1, and include the product name and price for each order.</pre><h2>Cell 20 · code</h2><pre class="code">%%sql
+
+SELECT p.product_name, p.price
+FROM Orders o
+JOIN Products p ON o.pid = p.pid
+WHERE o.quantity &gt; 1;</pre><h2>Cell 21 · markdown</h2><pre class="code">## **Q5 (4 points)**
+
+Find all orders for products in the Electronics category. Display the order id, customer id, product name, and order date.</pre><h2>Cell 22 · code</h2><pre class="code">%%sql
+
+SELECT o.oid, o.cid, p.product_name, o.order_date
+FROM Orders o
+JOIN Products p ON o.pid = p.pid
+WHERE p.category = &#x27;Electronics&#x27;;
+
+</pre><h2>Cell 23 · markdown</h2><pre class="code">## **Q6 (4 points)**
+
+Join the Customers table and the Orders table and display all columns.</pre><h2>Cell 24 · code</h2><pre class="code">%%sql
+
+SELECT *
+FROM Customers c
+JOIN Orders o
+ON c.cid = o.cid;</pre><h2>Cell 25 · markdown</h2><pre class="code">## **Q7 (4 points)**
+
+Retrieve all products with a price greater than $100 and rename the output columns as: product_id, name, cat, cost.</pre><h2>Cell 26 · code</h2><pre class="code">%%sql
+
+SELECT
+    pid AS product_id,
+    product_name AS name,
+    category AS cat,
+    price AS cost
+FROM Products
+WHERE price &gt; 100;</pre><h2>Cell 27 · markdown</h2><pre class="code">## **Q8 (4 points)**
+
+Find the name and city of all customers whose name starts with the letter &quot;A&quot; or ends with &quot;h&quot;. Display the results with column headers customer_name and customer_city.</pre><h2>Cell 28 · code</h2><pre class="code">%%sql
+
+SELECT
+    name AS customer_name,
+    city AS customer_city
+FROM Customers
+WHERE name LIKE &#x27;A%&#x27;
+   OR name LIKE &#x27;%h&#x27;;</pre><h2>Cell 29 · markdown</h2><pre class="code">## **Q9 (4 points)**
+
+For each order, display the customer name, product name, category, and order date. Only show orders where the product price is above $100.</pre><h2>Cell 30 · code</h2><pre class="code">%%sql
+
+SELECT
+    c.name,
+    p.product_name,
+    p.category,
+    o.order_date
+FROM Orders o
+JOIN Customers c ON o.cid = c.cid
+JOIN Products p ON o.pid = p.pid
+WHERE p.price &gt; 100;</pre><h2>Cell 31 · markdown</h2><pre class="code">## **Q10 (4 points)**
+
+Find the distinct cities of Prime members who have placed an order for an Electronics product.</pre><h2>Cell 32 · code</h2><pre class="code">%%sql
+
+SELECT DISTINCT c.city
+FROM Customers c
+JOIN Orders o  ON c.cid = o.cid
+JOIN Products p ON o.pid = p.pid
+WHERE c.membership = &#x27;Prime&#x27;
+  AND p.category = &#x27;Electronics&#x27;;
+</pre><h2>Cell 33 · markdown</h2><pre class="code">---
+## End of Homework 4
+**Total Points: 40**
+
+Make sure all cells have been run and your answers are saved before submitting.</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

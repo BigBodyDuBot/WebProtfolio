@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task3.cs | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/programming-paradigms.html">← Back to project</a><h1 class="source-title">Task3.cs</h1><a class="download" href="../../files/programming-paradigms/769-Task3.cs" download>Download original · CS</a><pre class="code">using System;
+
+class Task3
+{
+    static void Main()
+    {
+        int n = 4;
+
+        int[,] x = {
+            {0, 0, 0, 0},
+            {1, 0, 0, 0},
+            {0, 2, 0, 0},
+            {3, 4, 5, 6}
+        };
+
+        bool found = false;
+
+        for (int i = 0; i &lt; n; i++)
+        {
+            bool allZero = true;
+
+            for (int j = 0; j &lt; n; j++)
+            {
+                if (x[i, j] != 0)
+                {
+                    allZero = false;
+                    break;
+                }
+            }
+
+            if (allZero)
+            {
+                Console.WriteLine(&quot;First all-zero row is: &quot; + i);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine(&quot;No all-zero row found.&quot;);
+        }
+    }
+}</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>
