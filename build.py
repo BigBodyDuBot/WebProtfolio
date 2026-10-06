@@ -1,7 +1,7 @@
 """Rebuild static HTML from projects.json. Python 3, standard library only."""
 from pathlib import Path
 from html import escape as e
-import json
+import json, re
 
 ROOT=Path(__file__).resolve().parent
 projects=json.loads((ROOT/'projects.json').read_text(encoding='utf-8'))
@@ -30,7 +30,9 @@ def resource(p,r):
     fmt=r['format'];href='../'+r['path'];action='Open report' if fmt=='PDF' else 'Download original'
     if fmt in source_ext:href=source_view(p,r);action='Read source'
     download=' download' if action=='Download original' else ''
-    return f'<a class="resource" href="{href}"{download}><span class="file-name">{e(r["name"])}</span><span class="file-meta">{action} ↗ &nbsp;·&nbsp; {e(fmt)} &nbsp;·&nbsp; {size(r["bytes"])}</span></a>'
+    label=r.get('label') or re.sub(r'[_]+',' ',Path(r['name']).stem).strip()
+    if label.isupper():label=label.capitalize()
+    return f'<a class="resource" href="{href}"{download} title="{e(r["name"])}"><span class="file-name">{e(label)}</span><span class="file-meta">{action} ↗ &nbsp;·&nbsp; {e(fmt)} &nbsp;·&nbsp; {size(r["bytes"])}</span></a>'
 
 cards=[]
 for n,p in enumerate(projects,1):
