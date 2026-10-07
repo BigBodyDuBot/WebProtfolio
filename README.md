@@ -37,7 +37,7 @@ The HTTP server and client are local Python exercises. Their HTML test page is d
 
 For a local preview, run python -m http.server 8000 from this folder and open http://localhost:8000.
 
-The existing page layout, styling, navigation and search/filter interaction are retained. Project links and downloads work without JavaScript. There are no analytics, external fonts or third-party page scripts.
+The existing page layout and styling are retained. The project list shows six projects per page, with numbered navigation links above and below it. Search and subject filters apply to the complete collection. Page links can be bookmarked and browser Back/Forward restores the selected page. Project links and downloads work without JavaScript. There are no analytics, external fonts or third-party page scripts.
 
 ## GitHub Pages
 
