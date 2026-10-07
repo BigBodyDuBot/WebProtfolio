@@ -28,7 +28,7 @@ def source_view(p,r):
 
 def resource(p,r):
     fmt=r['format'];href='../'+r['path'];action='Open report' if fmt=='PDF' else 'Download original'
-    if fmt in source_ext:href=source_view(p,r);action='Read source'
+    if fmt in source_ext:href=source_view(p,r);action='Read text' if fmt=='TXT' else 'Read source'
     download=' download' if action=='Download original' else ''
     label=r.get('label') or re.sub(r'[_]+',' ',Path(r['name']).stem).strip()
     if label.isupper():label=label.capitalize()
@@ -40,7 +40,7 @@ for n,p in enumerate(projects,1):
     search=e(' '.join([p['title'],p['category'],p['summary'],p['did']]+p['tags']).lower(),quote=True)
     cards.append(f'<article class="card" data-category="{p["category"]}" data-search="{search}"><div class="meta"><span>{p["category"]}</span><span>{n:02d}</span></div><h3><a href="projects/{p["id"]}.html">{e(p["title"])}</a></h3><p>{e(p["summary"])}</p><div class="tags">{tags}</div><div class="bottom"><span>{len(p["resources"])} project files</span><span class="arrow" aria-hidden="true">↗</span></div></article>')
     resources=[resource(p,r) for r in p['resources']]
-    extra=f'<details><summary>More files &amp; earlier versions ({len(resources)-3})</summary>{"".join(resources[3:])}</details>' if len(resources)>3 else ''
+    extra=f'<details><summary>More project files ({len(resources)-3})</summary>{"".join(resources[3:])}</details>' if len(resources)>3 else ''
     note=f'<div class="notice"><strong>About this coursework</strong><br>{e(p["note"])}</div>' if p['note'] else ''
     credit=f'<p class="credit">{e(p["credit"])}</p>' if p['credit'] else ''
     body=f'''<a class="back" href="../index.html?category={p['category']}#projects">← All {p['category'].lower()} projects</a><div class="project-hero"><div class="eyebrow">{p['category']} / Academic project {n:02d}</div><h1>{e(p['title'])}</h1><p class="intro">{e(p['summary'])}</p><div class="pills">{tags}</div></div><div class="project-body"><div class="story"><section><h2>What I did</h2><p>{e(p['did'])}</p></section><section><h2>Why it matters</h2><p>{e(p['why'])}</p></section><section><h2>What came out of it</h2><p>{e(p['outcome'])}</p></section>{note}{credit}</div><aside class="resources" aria-label="Project files"><h2>Explore the work</h2><p class="file-intro">Reports, calculations and source files from this project. Office documents download in their original format.</p>{''.join(resources[:3])}{extra}</aside></div><p class="return"><a href="../index.html#projects">← Browse the complete archive</a></p>'''

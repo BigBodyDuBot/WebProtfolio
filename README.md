@@ -1,6 +1,6 @@
 # Duy Hoang — Academic Portfolio
 
-A central index of 15 school projects and 42 supporting files bearing **Duy Hoang** or **Duy Linh Hoang** in the original filename or visible contents.
+A central index of 15 school projects and 26 supporting files bearing **Duy Hoang** or **Duy Linh Hoang** in the original filename or visible contents.
 
 **Website:** https://BigBodyDuBot.github.io/WebProtfolio/
 
@@ -16,9 +16,9 @@ Each project explains the work, its purpose and the resulting academic deliverab
 
 Only coursework with **Duy Hoang** or **Duy Linh Hoang** in its original filename or visible contents is included. Names split by spaces or line breaks are recognized; scans were also checked visually. A computer username in a filesystem path, generated website heading, surname alone, or another file from the same project does not qualify a file. Coauthored work is retained when it includes the required name, with the other authors still credited.
 
-The name review retained 42 of the previous 104 attachments. Projects without a qualifying attachment were removed, including the chemistry projects. Each retained resource in `projects.json` records where its name was verified.
+The name review retained 42 of the previous 104 attachments. A subsequent content review consolidated 16 redundant versions, leaving 26 distinct supporting files. Projects without a qualifying attachment were removed, including the chemistry projects. Each retained resource in `projects.json` records where its name was verified.
 
-This is a coursework portfolio. Draft analyses are identified on the relevant pages. Claims are limited to the documented academic work; no commercial outcomes or production deployments are implied. Original coauthor and course-scaffold credits are retained. Standalone photographs, unrelated personal files, resumes, restaurant material and exam files are not included. Exact duplicate files are omitted; other versions remain grouped with their project.
+This is a coursework portfolio. Draft analyses are identified on the relevant pages. Claims are limited to the documented academic work; no commercial outcomes or production deployments are implied. Original coauthor and course-scaffold credits are retained. Standalone photographs, unrelated personal files, resumes, restaurant material and exam files are not included. Duplicate copies, repeated format exports and superseded report/code drafts are omitted. Each remaining academic file has a descriptive topic-based filename ending in Duy_Hoang; original filenames and authorship evidence are preserved in projects.json. Distinct reports, source code, proposals and presentations remain separate.
 
 ## Update the site
 
