@@ -11,7 +11,7 @@ A central index of 24 academic projects with 41 files drawn exclusively from the
 - Data: statistical literacy, descriptive summaries, regression, probability, z-scores and a Python/SQLite enrollment application.
 - Cybersecurity: Linux access control, Set-UID, memory protections, packet handling, firewalls and web-security labs.
 
-Each project explains the work, its purpose and the documented outcome. Reports, measurements, code and presentations are linked from the project pages. Collaborator and course-scaffold credits remain intact.
+Each project explains the work, its purpose and the documented outcome. Reports, measurements, code and presentations are linked from the project pages. Cybersecurity pages include lab setup descriptions based on the supplied reports. Collaborator and course-scaffold credits remain intact.
 
 ## Collection and attribution
 

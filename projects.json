@@ -354,7 +354,8 @@
         "authorship_basis": "User supplied project work; original collaborator and scaffold attribution retained",
         "sha256": "85576275eb3e5008e1c40c3e7fec512ce6399e79c5798414355159423ee1f8cc"
       }
-    ]
+    ],
+    "lab_setup": "The lab used Ubuntu Linux and a sample application directory containing configuration, analytics and deployment files. The access-control exercise represented three processes with separate user accounts and two groups, then mapped the policy to ownership and file permissions. The report records permission checks and terminal evidence, including an interruption noted during the setup."
   },
   {
     "id": "security-setuid",
@@ -386,7 +387,8 @@
         "authorship_basis": "User supplied project work; original collaborator and scaffold attribution retained",
         "sha256": "dd9b29ded4a5e663fd9b3d1e57983de2eb4c42bcc2ce73f9814da4fc0de04064"
       }
-    ]
+    ],
+    "lab_setup": "The lab used a Linux shell and small C programs to examine environment inheritance and privileged execution. I compiled the test programs, compared parent and child environments, and configured a root-owned Set-UID executable for the privilege tests. PATH, LD_LIBRARY_PATH and a custom variable provided controlled inputs for comparing how each program received its environment."
   },
   {
     "id": "security-buffer-overflow",
@@ -431,7 +433,8 @@
         "authorship_basis": "User supplied project work; original collaborator and scaffold attribution retained",
         "sha256": "0d26b11a3981fa3335b833c0afe22e079a4daffc2fe2eff917792564f0f45d56"
       }
-    ]
+    ],
+    "lab_setup": "The lab used the SEED buffer-overflow environment with vulnerable server containers. I compiled the supplied server and stack programs, started the Docker Compose environment, and verified the running containers and connection to the Level-1 server. Separate 32-bit and 64-bit shellcode test programs supported the exercises, while ASLR settings were varied to observe changes in memory addresses."
   },
   {
     "id": "security-packets-firewalls",
@@ -463,7 +466,8 @@
         "authorship_basis": "User supplied project work; original collaborator and scaffold attribution retained",
         "sha256": "9d87268fbebfb6c3e9a38da54aab928563f7f4aa261dec7c12debb8ae01c2350"
       }
-    ]
+    ],
+    "lab_setup": "I built and started the Docker Compose environment from the Labsetup folder. The packet experiments used an attacker container and two hosts on the same virtual network; the firewall experiments added a router between the internal and external networks. I checked container status with dockps, entered the attacker and router containers with docksh, and used packet tools and iptables to observe traffic and rule behavior."
   },
   {
     "id": "security-web-attacks",
@@ -494,7 +498,8 @@
         "authorship_basis": "User supplied project work; original collaborator and scaffold attribution retained",
         "sha256": "58f96e31d1019749245d547928f5b5de9ede609428011fda459188a0bbef42fa"
       }
-    ]
+    ],
+    "lab_setup": "I built and started the lab containers with dcbuild and dcup, then checked their status with dockps. The CSRF environment included the Elgg application, its database and an attacker website, with local hostname mappings and HTTP Header Live for observing browser requests. The SQL-injection environment used a separate vulnerable web application and MySQL database, whose tables and fields I inspected before the exercises."
   },
   {
     "id": "statistics-critical-literacy",
