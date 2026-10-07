@@ -28,8 +28,9 @@ def source_view(p,r):
 
 def resource(p,r):
     fmt=r['format'];href='../'+r['path'];action='Open report' if fmt=='PDF' else 'Download original'
+    if r.get('role')=='Lab setup download':action='Download ZIP'
     if fmt in source_ext:href=source_view(p,r);action='Read text' if fmt=='TXT' else 'Read source'
-    download=' download' if action=='Download original' else ''
+    download=' download' if action in {'Download original','Download ZIP'} else ''
     label=r.get('label') or re.sub(r'[_]+',' ',Path(r['name']).stem).strip()
     if label.isupper():label=label.capitalize()
     role=e(r.get('role','Project file'))

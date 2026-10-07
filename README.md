@@ -1,6 +1,6 @@
 # Duy Hoang — Academic Portfolio
 
-A central index of 24 academic projects with 41 files drawn exclusively from the seven project folders supplied on October 7, 2026. This collection replaces the previous website archive.
+A central index of 24 academic projects with 44 files drawn exclusively from the seven project folders supplied on October 7, 2026. This collection replaces the previous website archive.
 
 **Website:** https://bigbodydubot.github.io/WebProtfolio/
 
@@ -11,7 +11,7 @@ A central index of 24 academic projects with 41 files drawn exclusively from the
 - Data: statistical literacy, descriptive summaries, regression, probability, z-scores and a Python/SQLite enrollment application.
 - Cybersecurity: Linux access control, Set-UID, memory protections, packet handling, firewalls and web-security labs.
 
-Each project explains the work, its purpose and the documented outcome. Reports, measurements, code and presentations are linked from the project pages. Cybersecurity pages include lab setup descriptions based on the supplied reports. Collaborator and course-scaffold credits remain intact.
+Each project explains the work, its purpose and the documented outcome. Reports, measurements, code and presentations are linked from the project pages. Cybersecurity pages include lab setup descriptions based on the supplied reports. The Set-UID, buffer-overflow and packet-spoofing pages also provide downloadable ZIP folders from the locally supplied setup packages; original SEED lab scaffolds remain attributed. Duplicate buffer-overflow archives were consolidated and an editor swap file was omitted. Collaborator and course-scaffold credits remain intact.
 
 ## Collection and attribution
 
