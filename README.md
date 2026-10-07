@@ -6,7 +6,7 @@ A central index of 24 academic projects with 44 files drawn exclusively from the
 
 **Resume:** [PDF](resume/Duy_Linh_Hoang_Resume.pdf) · [Editable Word document](resume/Duy_Linh_Hoang_Resume.docx)
 
-The universal resume summarizes current education, skills, work history and selected academic projects. It is available from the website navigation and About section; personal reference contacts are omitted from the public version.
+The one-page universal resume summarizes current education, skills, work history and selected academic projects. It is available from the website navigation and About section; personal reference contacts are omitted from the public version.
 
 ## Browse
 
