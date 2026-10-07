@@ -1,290 +1,37 @@
 [
   {
-    "id": "uv-visible-calibration",
-    "title": "Measuring concentration with light",
-    "category": "Chemistry",
-    "summary": "External standards and standard addition for ferricyanide analysis.",
-    "did": "Prepared a five-point ferricyanide calibration series, collected absorbance measurements at 420 nm, and organized external-standard and standard-addition calculations in Excel.",
-    "why": "Comparing calibration approaches helps explain how the sample matrix can influence an analytical measurement.",
-    "outcome": "Produced lab reports, preparation calculations and worksheets that document the measurement process and provide a basis for comparing the two methods.",
-    "tags": [
-      "UV–Vis",
-      "Calibration",
-      "Excel"
-    ],
-    "note": "Analysis draft: calibration formulas and reported fit statistics need reconciliation with the measured data. No validated accuracy or concentration claim is made here.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "ANALYTE_CONCENTRATION_DETERMINATION_USING_EXTERNAL_STANDARD_AND_STANDARD_ADDITION_.docx",
-        "path": "files/uv-visible-calibration/042-ANALYTE_CONCENTRATION_DETERMINATION_USING_EXTERNAL_STANDARD_AND_STANDARD_ADDITION_.docx",
-        "format": "DOCX",
-        "bytes": 24827,
-        "primary": true
-      },
-      {
-        "name": "Experiment_3_Part_2_Standard (1).xlsx",
-        "path": "files/uv-visible-calibration/257-Experiment_3_Part_2_Standard-1.xlsx",
-        "format": "XLSX",
-        "bytes": 72671,
-        "primary": true
-      },
-      {
-        "name": "Prelab_Calculations_ExternalStandard_StandardAddition.docx",
-        "path": "files/uv-visible-calibration/527-Prelab_Calculations_ExternalStandard_StandardAddition.docx",
-        "format": "DOCX",
-        "bytes": 37929,
-        "primary": true
-      },
-      {
-        "name": "Prelab_ExternalStandard_StandardAddition.docx",
-        "path": "files/uv-visible-calibration/528-Prelab_ExternalStandard_StandardAddition.docx",
-        "format": "DOCX",
-        "bytes": 38816,
-        "primary": false
-      },
-      {
-        "name": "Experiment 3_Part 2_Standard Addition_empty example (1).xlsx",
-        "path": "files/uv-visible-calibration/252-Experiment-3_Part-2_Standard-Addition_empty-example-1.xlsx",
-        "format": "XLSX",
-        "bytes": 71051,
-        "primary": false
-      },
-      {
-        "name": "Experiment 3_Part 2_Standard Addition_empty example.xlsx",
-        "path": "files/uv-visible-calibration/253-Experiment-3_Part-2_Standard-Addition_empty-example.xlsx",
-        "format": "XLSX",
-        "bytes": 81871,
-        "primary": false
-      },
-      {
-        "name": "Results_and_Discussion_Expanded.docx",
-        "path": "files/uv-visible-calibration/561-Results_and_Discussion_Expanded.docx",
-        "format": "DOCX",
-        "bytes": 37942,
-        "primary": false
-      }
-    ]
-  },
-  {
-    "id": "acid-base-titration",
-    "title": "Following an acid–base titration",
-    "category": "Chemistry",
-    "summary": "NaOH standardization and volumetric analysis of an unknown acid.",
-    "did": "Used potassium hydrogen phthalate to standardize NaOH, collected my own titration measurements, and organized pH and volume data into worksheets and a written report.",
-    "why": "Standardization connects the amount of titrant delivered to the amount of analyte, making concentration calculations meaningful.",
-    "outcome": "Created an experimental record for examining titration behavior and evaluating the uncertainty in an unknown-acid analysis.",
-    "tags": [
-      "Titration",
-      "Standardization",
-      "pH"
-    ],
-    "note": "Analysis draft: reported titrant concentrations, equivalence points and stoichiometry are not fully consistent. The files are preserved as coursework, not as a validated identification of the unknown acid.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Standardization_of_NaOH_Titrant_and_Volumetric_Determination_of_Unknown_Acidedit.docx",
-        "path": "files/acid-base-titration/754-Standardization_of_NaOH_Titrant_and_Volumetric_Determination_of_Unknown_Acidedit.docx",
-        "format": "DOCX",
-        "bytes": 57488,
-        "primary": true
-      },
-      {
-        "name": "Titrationedd-1763880750303555-17640628830243192.xlsx",
-        "path": "files/acid-base-titration/783-Titrationedd-1763880750303555-17640628830243192.xlsx",
-        "format": "XLSX",
-        "bytes": 24137,
-        "primary": true
-      },
-      {
-        "name": "lab 5 (1).xlsx",
-        "path": "files/acid-base-titration/404-lab-5-1.xlsx",
-        "format": "XLSX",
-        "bytes": 14425,
-        "primary": true
-      },
-      {
-        "name": "Titrationedd-1763880750303555.xlsx",
-        "path": "files/acid-base-titration/784-Titrationedd-1763880750303555.xlsx",
-        "format": "XLSX",
-        "bytes": 24189,
-        "primary": false
-      }
-    ]
-  },
-  {
-    "id": "glassware-precision",
-    "title": "How precise is the preparation?",
-    "category": "Chemistry",
-    "summary": "A comparison of volumetric preparation methods using absorbance data.",
-    "did": "Collected absorbance measurements for six preparation conditions with five measurements per condition, along with five blank measurements; organized blank correction and variability calculations in Excel.",
-    "why": "Replicate measurements help distinguish the consistency of a preparation method from the size of a single reading.",
-    "outcome": "Built a report and calculation workbook for comparing variation across preparation conditions and discussing measurement uncertainty.",
-    "tags": [
-      "Replicates",
-      "Precision",
-      "Uncertainty"
-    ],
-    "note": "Analysis draft: some spreadsheet references and uncertainty calculations require correction before numerical comparisons can be treated as final.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Chem310_Lab1_Short_Report_Corrected.docx",
-        "path": "files/glassware-precision/122-Chem310_Lab1_Short_Report_Corrected.docx",
-        "format": "DOCX",
-        "bytes": 38113,
-        "primary": true
-      },
-      {
-        "name": "Chem310_Lab1_Calculations.xlsx",
-        "path": "files/glassware-precision/119-Chem310_Lab1_Calculations.xlsx",
-        "format": "XLSX",
-        "bytes": 10749,
-        "primary": true
-      },
-      {
-        "name": "Expected_Concentration_Uncertainty.docx",
-        "path": "files/glassware-precision/248-Expected_Concentration_Uncertainty.docx",
-        "format": "DOCX",
-        "bytes": 37385,
-        "primary": true
-      },
-      {
-        "name": "Chem310_Lab1_Revised.docx",
-        "path": "files/glassware-precision/120-Chem310_Lab1_Revised.docx",
-        "format": "DOCX",
-        "bytes": 38495,
-        "primary": false
-      },
-      {
-        "name": "Chem310_Lab1_Short_Report.docx",
-        "path": "files/glassware-precision/121-Chem310_Lab1_Short_Report.docx",
-        "format": "DOCX",
-        "bytes": 31869,
-        "primary": false
-      },
-      {
-        "name": "Glassware measurement workbook.xlsx",
-        "path": "files/glassware-precision/281-glassware-measurements.xlsx",
-        "format": "XLSX",
-        "bytes": 11551,
-        "primary": false
-      }
-    ]
-  },
-  {
-    "id": "indicator-pka",
-    "title": "Tracking an indicator’s color change",
-    "category": "Chemistry",
-    "summary": "Spectrophotometric study of bromocresol green across buffer pH values.",
-    "did": "Collected my own spectrophotometric measurements of bromocresol green in five buffers spanning pH 3.8–5.8 and organized the data for an acid–base equilibrium analysis.",
-    "why": "An indicator’s changing absorbance connects a visible color change to the relative amounts of its acid and base forms.",
-    "outcome": "Prepared a lab report and workbook connecting pH-dependent spectra with the method used to estimate an indicator’s pKa.",
-    "tags": [
-      "Spectrophotometry",
-      "Equilibrium",
-      "Buffers"
-    ],
-    "note": "Analysis draft: wavelength labels, linked workbook calculations and the reported pKa require review. A verified pKa is not claimed.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Spectrophotometric (1).docx",
-        "path": "files/indicator-pka/747-Spectrophotometric-1.docx",
-        "format": "DOCX",
-        "bytes": 35155,
-        "primary": true
-      },
-      {
-        "name": "Exp 6 Lab Report.xlsx",
-        "path": "files/indicator-pka/246-Exp-6-Lab-Report.xlsx",
-        "format": "XLSX",
-        "bytes": 13484,
-        "primary": true
-      }
-    ]
-  },
-  {
-    "id": "inorganic-chemistry",
-    "title": "Inorganic chemistry problem set",
-    "category": "Chemistry",
-    "summary": "Written chemistry coursework and worked subparts.",
-    "did": "Organized worked responses to a CHEM 220 problem set in a single document.",
-    "why": "Working through individual subparts makes chemical reasoning explicit and easier to review.",
-    "outcome": "Created a structured coursework document that can be read alongside the laboratory projects.",
-    "tags": [
-      "CHEM 220",
-      "Written analysis"
-    ],
-    "note": "",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Chem220_PS2_AllSubparts_Assignment.docx",
-        "path": "files/inorganic-chemistry/118-Chem220_PS2_AllSubparts_Assignment.docx",
-        "format": "DOCX",
-        "bytes": 83069,
-        "primary": true
-      }
-    ]
-  },
-  {
     "id": "course-registration",
-    "title": "A small course registration database",
+    "title": "Designing a course enrollment schema",
     "category": "Data",
-    "summary": "A Python and SQLite system for students, courses and enrollments.",
-    "did": "Implemented database tables and Python operations for registration, course lookup, enrollment, withdrawal and enrollment counts, using parameterized SQL queries and relational joins.",
-    "why": "Separating students, courses and enrollments keeps the data organized and supports queries across related records.",
-    "outcome": "Produced a working educational database project, notebooks and a final report using a small sample dataset to demonstrate the registration workflow.",
+    "summary": "Named coursework documents for a university relational schema.",
+    "did": "Defined a university schema with students, courses and enrollments, documenting primary keys, a composite enrollment key and foreign-key relationships.",
+    "why": "Explicit keys and relationships organize records and describe how student and course data connect.",
+    "outcome": "Produced a relational-schema report and a related coursework document. Both list my name and preserve the original collaborator credits.",
     "tags": [
-      "Python",
-      "SQLite",
-      "Relational design"
+      "Relational design",
+      "Primary keys",
+      "Foreign keys"
     ],
-    "note": "Classroom prototype with sample data; not a deployed student-information system.",
+    "note": "This page presents the retained schema documents. Implementation files without my full name have been removed.",
     "credit": "The final report lists Duy Hoang and Leighanna Navales. Original report credits are retained.",
     "resources": [
-      {
-        "name": "untitled0.py",
-        "path": "files/course-registration/805-untitled0.py",
-        "format": "PY",
-        "bytes": 9664,
-        "primary": true
-      },
       {
         "name": "Duy Leigh CSIT 355 Final Project.pdf",
         "path": "files/course-registration/222-Duy-Leigh-CSIT-355-Final-Project.pdf",
         "format": "PDF",
         "bytes": 45964,
-        "primary": true
-      },
-      {
-        "name": "DSProject.ipynb",
-        "path": "files/course-registration/192-DSProject.ipynb",
-        "format": "IPYNB",
-        "bytes": 24032,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy  Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "University.docx",
         "path": "files/course-registration/788-University.docx",
         "format": "DOCX",
         "bytes": 22913,
-        "primary": false
-      },
-      {
-        "name": "Untitled0 (1).ipynb",
-        "path": "files/course-registration/803-Untitled0-1.ipynb",
-        "format": "IPYNB",
-        "bytes": 24609,
-        "primary": false
-      },
-      {
-        "name": "Untitled0.ipynb",
-        "path": "files/course-registration/804-Untitled0.ipynb",
-        "format": "IPYNB",
-        "bytes": 16723,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
@@ -292,69 +39,26 @@
     "id": "sql-coursework",
     "title": "Asking questions with SQL",
     "category": "Data",
-    "summary": "Database exercises involving queries and relational reasoning.",
-    "did": "Wrote SQL and notebook-based solutions using filtering, joins and distinct results, and completed related relational-algebra exercises.",
+    "summary": "Named database coursework with written query solutions.",
+    "did": "Completed database assignments involving query formulation and relational reasoning.",
     "why": "Translating a question into a query is a foundation for retrieving useful information from structured data.",
-    "outcome": "Created a set of coursework examples that demonstrate how query structure changes the records returned.",
+    "outcome": "Produced named assignment documents recording the database solutions and supporting work.",
     "tags": [
-      "SQL",
-      "SQLite",
-      "Notebooks"
+      "Databases",
+      "Queries",
+      "Relational reasoning"
     ],
     "note": "",
     "credit": "",
     "resources": [
-      {
-        "name": "Hoang_Duy_Exe1.ipynb",
-        "path": "files/sql-coursework/274-Hoang_Duy_Exe1.ipynb",
-        "format": "IPYNB",
-        "bytes": 29197,
-        "primary": true
-      },
-      {
-        "name": "Hoang_Duy_HW4.ipynb",
-        "path": "files/sql-coursework/277-Hoang_Duy_HW4.ipynb",
-        "format": "IPYNB",
-        "bytes": 43647,
-        "primary": true
-      },
       {
         "name": "Hoang_Duy_HW2.pdf.pdf",
         "path": "files/sql-coursework/275-Hoang_Duy_HW2.pdf.pdf",
         "format": "PDF",
         "bytes": 440328,
-        "primary": true
-      },
-      {
-        "name": "Hoang_Duy_HW3.pdf",
-        "path": "files/sql-coursework/276-Hoang_Duy_HW3.pdf",
-        "format": "PDF",
-        "bytes": 18679306,
-        "primary": false
-      }
-    ]
-  },
-  {
-    "id": "penny-statistics",
-    "title": "Exploring a penny dataset",
-    "category": "Data",
-    "summary": "An Excel workbook for descriptive statistics and distributions.",
-    "did": "Organized a 281-row dataset containing year, mass and mint information, with summary statistics and distribution analysis.",
-    "why": "Descriptive statistics reveal the spread and composition of a dataset before more complex analysis is attempted.",
-    "outcome": "Produced a workbook that brings the observations and statistical summaries together for review.",
-    "tags": [
-      "Excel",
-      "Descriptive statistics"
-    ],
-    "note": "",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Hoang_Stats.xlsx",
-        "path": "files/penny-statistics/280-Hoang_Stats.xlsx",
-        "format": "XLSX",
-        "bytes": 61108,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "handwritten contents, visually verified; page 3"
       }
     ]
   },
@@ -365,7 +69,7 @@
     "summary": "A Toyota Corolla-inspired wireframe and transformation study.",
     "did": "Represented a model with 16 vertices and an adjacency matrix, then used Python, NumPy and Matplotlib to explore rotations, scaling and perspective projection.",
     "why": "Matrix transformations show how computer graphics translate geometric data into a view on a screen.",
-    "outcome": "Implemented and documented five transformation cases, linking the mathematical operations with their plotted results.",
+    "outcome": "Produced named reports documenting five transformation cases and connecting the mathematical operations with the plotted results.",
     "tags": [
       "Python",
       "NumPy",
@@ -375,60 +79,49 @@
     "credit": "",
     "resources": [
       {
-        "name": "project_toyota_corolla_fixed.py",
-        "path": "files/car-projection/541-project_toyota_corolla_fixed.py",
-        "format": "PY",
-        "bytes": 3203,
-        "primary": true
-      },
-      {
         "name": "New Project Toyota Corolla Report Final.pdf",
         "path": "files/car-projection/488-New-Project-Toyota-Corolla-Report-Final.pdf",
         "format": "PDF",
         "bytes": 414074,
-        "primary": true
-      },
-      {
-        "name": "project_toyota_corolla.py",
-        "path": "files/car-projection/540-project_toyota_corolla.py",
-        "format": "PY",
-        "bytes": 3259,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Project Toyota Corolla Report (1).docx",
         "path": "files/car-projection/536-Project-Toyota-Corolla-Report-1.docx",
         "format": "DOCX",
         "bytes": 384862,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Project Toyota Corolla Report.docx",
         "path": "files/car-projection/537-Project-Toyota-Corolla-Report.docx",
         "format": "DOCX",
         "bytes": 8405,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Project Toyota Corolla Report.pdf",
         "path": "files/car-projection/538-Project-Toyota-Corolla-Report.pdf",
         "format": "PDF",
         "bytes": 116904,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Project_Toyota_Corolla_Report.docx",
         "path": "files/car-projection/542-Project_Toyota_Corolla_Report.docx",
         "format": "DOCX",
         "bytes": 37665,
-        "primary": false
-      },
-      {
-        "name": "ProjectToyotaCorolla.pdf",
-        "path": "files/car-projection/543-ProjectToyotaCorolla.pdf",
-        "format": "PDF",
-        "bytes": 112655,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
@@ -453,35 +146,36 @@
         "path": "files/kernel-timer/296-hw1-6.c",
         "format": "C",
         "bytes": 2065,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Duy Hoang CSIT Assignment 1.docx",
         "path": "files/kernel-timer/205-Duy-Hoang-CSIT-Assignment-1.docx",
         "format": "DOCX",
         "bytes": 924793,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "hw1 (1).c",
         "path": "files/kernel-timer/290-hw1-1.c",
         "format": "C",
         "bytes": 1591,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "hw1 (2).c",
         "path": "files/kernel-timer/292-hw1-2.c",
         "format": "C",
         "bytes": 1600,
-        "primary": false
-      },
-      {
-        "name": "hw1 (4).c",
-        "path": "files/kernel-timer/294-hw1-4.c",
-        "format": "C",
-        "bytes": 1003,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
@@ -492,7 +186,7 @@
     "summary": "A POSIX threads exercise in shared-resource coordination.",
     "did": "Used mutexes, condition variables and state tracking to coordinate five threads and compare synchronized behavior with an unsynchronized approach.",
     "why": "Concurrency requires explicit coordination when multiple tasks compete for shared resources.",
-    "outcome": "Created C source and a report that make the synchronization strategy and observed behavior available for inspection.",
+    "outcome": "Produced a named report documenting the synchronization strategy and observed behavior of the concurrent-thread exercise.",
     "tags": [
       "C",
       "POSIX threads",
@@ -502,50 +196,13 @@
     "credit": "",
     "resources": [
       {
-        "name": "dp_synch.c",
-        "path": "files/thread-synchronization/190-dp_synch.c",
-        "format": "C",
-        "bytes": 1906,
-        "primary": true
-      },
-      {
         "name": "Duy Hoang Assignment 5.pdf",
         "path": "files/thread-synchronization/193-Duy-Hoang-Assignment-5.pdf",
         "format": "PDF",
         "bytes": 129851,
-        "primary": true
-      }
-    ]
-  },
-  {
-    "id": "message-queues",
-    "title": "Communicating through message queues",
-    "category": "Software",
-    "summary": "A sender and receiver exercise using POSIX message queues.",
-    "did": "Completed sender and receiver scaffolds to exchange messages, include process identifiers, handle a termination message and close and unlink the queue.",
-    "why": "Message queues allow separate processes to communicate through an explicit interface.",
-    "outcome": "Produced paired C programs demonstrating a simple interprocess communication lifecycle.",
-    "tags": [
-      "C",
-      "POSIX",
-      "IPC"
-    ],
-    "note": "",
-    "credit": "Based on course-provided starter files; original comments are retained.",
-    "resources": [
-      {
-        "name": "send_skeleton (2).c",
-        "path": "files/message-queues/734-send_skeleton-2.c",
-        "format": "C",
-        "bytes": 1044,
-        "primary": true
-      },
-      {
-        "name": "rec_skeleton (1).c",
-        "path": "files/message-queues/559-rec_skeleton-1.c",
-        "format": "C",
-        "bytes": 1698,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       }
     ]
   },
@@ -566,32 +223,22 @@
     "credit": "",
     "resources": [
       {
-        "name": "lab1.c",
-        "path": "files/systems-labs/406-lab1.c",
-        "format": "C",
-        "bytes": 2462,
-        "primary": true
-      },
-      {
         "name": "CSIT 345 Lab1 (1).docx",
         "path": "files/systems-labs/145-CSIT-345-Lab1-1.docx",
         "format": "DOCX",
         "bytes": 6900,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "lab2 (1).c",
         "path": "files/systems-labs/410-lab2-1.c",
         "format": "C",
         "bytes": 385,
-        "primary": true
-      },
-      {
-        "name": "CSIT 345 Lab1.docx",
-        "path": "files/systems-labs/146-CSIT-345-Lab1.docx",
-        "format": "DOCX",
-        "bytes": 6867,
-        "primary": false
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
@@ -612,95 +259,58 @@
     "credit": "",
     "resources": [
       {
-        "name": "Project Report Ruby final.docx",
-        "path": "files/ruby-study/535-Project-Report-Ruby-final.docx",
-        "format": "DOCX",
-        "bytes": 30807,
-        "primary": true
-      },
-      {
         "name": "Duy Hoang Project Report Ruby.pdf",
         "path": "files/ruby-study/218-Duy-Hoang-Project-Report-Ruby.pdf",
         "format": "PDF",
         "bytes": 381334,
-        "primary": true
-      },
-      {
-        "name": "Ruby_Presentation_ULTIMATE.pptx",
-        "path": "files/ruby-study/569-Ruby_Presentation_ULTIMATE.pptx",
-        "format": "PPTX",
-        "bytes": 45042,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "Duy Hoang CSIT 313 Project Summary.docx",
         "path": "files/ruby-study/196-Duy-Hoang-CSIT-313-Project-Summary.docx",
         "format": "DOCX",
         "bytes": 7434,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "Duy Hoang l Ruby.pptx",
         "path": "files/ruby-study/211-Duy-Hoang-l-Ruby.pptx",
         "format": "PPTX",
         "bytes": 95770,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "Duy Hoang Project Draft.pdf",
         "path": "files/ruby-study/217-Duy-Hoang-Project-Draft.pdf",
         "format": "PDF",
         "bytes": 215188,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "Project Draft.docx",
         "path": "files/ruby-study/532-Project-Draft.docx",
         "format": "DOCX",
         "bytes": 21084,
-        "primary": false
-      },
-      {
-        "name": "Ruby.pptx",
-        "path": "files/ruby-study/566-Ruby.pptx",
-        "format": "PPTX",
-        "bytes": 11902862,
-        "primary": false
-      },
-      {
-        "name": "Ruby_Presentation_APlus_Styled.pptx",
-        "path": "files/ruby-study/567-Ruby_Presentation_APlus_Styled.pptx",
-        "format": "PPTX",
-        "bytes": 43731,
-        "primary": false
-      },
-      {
-        "name": "Ruby_Presentation_Speaker_Script.txt",
-        "path": "files/ruby-study/568-Ruby_Presentation_Speaker_Script.txt",
-        "format": "TXT",
-        "bytes": 2807,
-        "primary": false
-      },
-      {
-        "name": "Ruby_Speaker Notes.docx",
-        "path": "files/ruby-study/570-Ruby_Speaker-Notes.docx",
-        "format": "DOCX",
-        "bytes": 15644,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Ruby_Upgraded_Professor_Impressing.pptx",
         "path": "files/ruby-study/571-Ruby_Upgraded_Professor_Impressing.pptx",
         "format": "PPTX",
         "bytes": 95772,
-        "primary": false
-      },
-      {
-        "name": "Untitled document (4).docx",
-        "path": "files/ruby-study/799-Untitled-document-4.docx",
-        "format": "DOCX",
-        "bytes": 9225,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
@@ -708,15 +318,15 @@
     "id": "programming-paradigms",
     "title": "Solving problems across languages",
     "category": "Software",
-    "summary": "Programming-language assignments and source-code exercises.",
-    "did": "Completed exercises across Java, C#, C, C++, Racket and Prolog, with written work on language concepts and programming approaches.",
+    "summary": "Named assignments and written reflections on programming languages.",
+    "did": "Completed written assignments on programming-language concepts, with exercises and reflections covering imperative, functional and logic-programming approaches.",
     "why": "Expressing problems in different languages exposes differences in control flow, data representation and reasoning.",
-    "outcome": "Built a collection of assignment solutions and source files for comparing imperative, functional and logic-programming approaches.",
+    "outcome": "Produced named assignment documents and a text-based Racket exercise that show the reasoning behind the coursework.",
     "tags": [
-      "Java",
-      "C#",
+      "Programming languages",
       "Racket",
-      "Prolog"
+      "Prolog",
+      "Written analysis"
     ],
     "note": "",
     "credit": "",
@@ -726,119 +336,54 @@
         "path": "files/programming-paradigms/172-CSIT313HW2Hoang.pdf",
         "format": "PDF",
         "bytes": 8202859,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "handwritten contents, visually verified; page 1"
       },
       {
         "name": "Duy Hoang CSIT313 HW3.pdf",
         "path": "files/programming-paradigms/207-Duy-Hoang-CSIT313-HW3.pdf",
         "format": "PDF",
         "bytes": 145136,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "Duy Hoang CSIT313 Task1.docx",
         "path": "files/programming-paradigms/209-Duy-Hoang-CSIT313-Task1.docx",
         "format": "DOCX",
         "bytes": 9129,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "HoangTask5Answers.pdf",
         "path": "files/programming-paradigms/282-HoangTask5Answers.pdf",
         "format": "PDF",
         "bytes": 53485,
-        "primary": false
-      },
-      {
-        "name": "main.c",
-        "path": "files/programming-paradigms/464-main.c",
-        "format": "C",
-        "bytes": 333,
-        "primary": false
-      },
-      {
-        "name": "main.cpp",
-        "path": "files/programming-paradigms/465-main.cpp",
-        "format": "CPP",
-        "bytes": 256,
-        "primary": false
-      },
-      {
-        "name": "myfacts.pl",
-        "path": "files/programming-paradigms/486-myfacts.pl",
-        "format": "PL",
-        "bytes": 245,
-        "primary": false
-      },
-      {
-        "name": "Task1a.java",
-        "path": "files/programming-paradigms/764-Task1a.java",
-        "format": "JAVA",
-        "bytes": 374,
-        "primary": false
-      },
-      {
-        "name": "Task1b.java",
-        "path": "files/programming-paradigms/765-Task1b.java",
-        "format": "JAVA",
-        "bytes": 395,
-        "primary": false
-      },
-      {
-        "name": "Task2a.java",
-        "path": "files/programming-paradigms/767-Task2a.java",
-        "format": "JAVA",
-        "bytes": 567,
-        "primary": false
-      },
-      {
-        "name": "Task2b.java",
-        "path": "files/programming-paradigms/768-Task2b.java",
-        "format": "JAVA",
-        "bytes": 566,
-        "primary": false
-      },
-      {
-        "name": "Task3.cs",
-        "path": "files/programming-paradigms/769-Task3.cs",
-        "format": "CS",
-        "bytes": 813,
-        "primary": false
-      },
-      {
-        "name": "Task3.java",
-        "path": "files/programming-paradigms/770-Task3.java",
-        "format": "JAVA",
-        "bytes": 774,
-        "primary": false
-      },
-      {
-        "name": "Task4Hoang.rkt",
-        "path": "files/programming-paradigms/773-Task4Hoang.rkt",
-        "format": "RKT",
-        "bytes": 1050,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy  Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Task4Hoang.txt",
         "path": "files/programming-paradigms/774-Task4Hoang.txt",
         "format": "TXT",
         "bytes": 1308,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Task6Hoang.pdf",
         "path": "files/programming-paradigms/777-Task6Hoang.pdf",
         "format": "PDF",
         "bytes": 28737,
-        "primary": false
-      },
-      {
-        "name": "Task6Hoang.pl",
-        "path": "files/programming-paradigms/778-Task6Hoang.pl",
-        "format": "PL",
-        "bytes": 709,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy  Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
@@ -846,53 +391,50 @@
     "id": "algorithm-analysis",
     "title": "Choosing an algorithm deliberately",
     "category": "Software",
-    "summary": "Written analysis of sorting algorithms and data structures.",
-    "did": "Compared insertion sort and merge sort across input arrangements and discussed time complexity and data-structure choices.",
+    "summary": "A written comparison of insertion sort and merge sort.",
+    "did": "Compared insertion sort and merge sort across input arrangements and discussed their time complexity.",
     "why": "Algorithm selection depends on input size, ordering and the costs of the operations a program performs.",
-    "outcome": "Produced written comparisons that connect theoretical complexity to expected performance trends.",
+    "outcome": "Produced named written comparisons connecting theoretical complexity to expected performance trends.",
     "tags": [
-      "Algorithms",
+      "Sorting",
       "Complexity",
-      "Data structures"
+      "Written analysis"
     ],
     "note": "The portfolio presents written analysis; it does not claim independently reproduced benchmark improvements.",
     "credit": "",
     "resources": [
       {
-        "name": "Comparison_of_Sorting_Algorithms_and_Data_Structures.docx",
-        "path": "files/algorithm-analysis/127-Comparison_of_Sorting_Algorithms_and_Data_Structures.docx",
-        "format": "DOCX",
-        "bytes": 37942,
-        "primary": true
-      },
-      {
         "name": "CSIT 212 HW1.docx",
         "path": "files/algorithm-analysis/137-CSIT-212-HW1.docx",
         "format": "DOCX",
         "bytes": 351743,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Untitled document.docx",
         "path": "files/algorithm-analysis/800-Untitled-document.docx",
         "format": "DOCX",
         "bytes": 351743,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
   {
     "id": "digital-logic",
-    "title": "From Boolean expressions to assembly",
+    "title": "Working through digital logic",
     "category": "Software",
-    "summary": "Computer-systems assignments and assembly exercises.",
-    "did": "Worked through Boolean simplification and digital-logic exercises, alongside assembly examples covering arithmetic, comparisons and loops.",
+    "summary": "Named computer-systems assignments on Boolean logic.",
+    "did": "Worked through Boolean simplification and computer-systems assignment problems, recording the intermediate reasoning in written documents.",
     "why": "These topics connect high-level program behavior with lower-level representations and operations.",
-    "outcome": "Assembled coursework and source examples showing the relationship between logic and machine-level instructions.",
+    "outcome": "Produced named coursework documents showing worked logic expressions and assignment responses.",
     "tags": [
-      "Assembly",
       "Boolean logic",
-      "Computer systems"
+      "Computer systems",
+      "Written analysis"
     ],
     "note": "",
     "credit": "",
@@ -902,49 +444,18 @@
         "path": "files/digital-logic/793-Untitled-document-1.docx",
         "format": "DOCX",
         "bytes": 8710,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Computer Systems (CSIT-230) Assignment 1 (1).docx",
         "path": "files/digital-logic/130-Computer-Systems-CSIT-230-Assignment-1-1.docx",
         "format": "DOCX",
         "bytes": 7835,
-        "primary": true
-      },
-      {
-        "name": "all gates.s",
-        "path": "files/digital-logic/039-all-gates.s",
-        "format": "S",
-        "bytes": 289,
-        "primary": true
-      },
-      {
-        "name": "big prb.s",
-        "path": "files/digital-logic/065-big-prb.s",
-        "format": "S",
-        "bytes": 200,
-        "primary": false
-      },
-      {
-        "name": "loop and compare.s",
-        "path": "files/digital-logic/463-loop-and-compare.s",
-        "format": "S",
-        "bytes": 210,
-        "primary": false
-      },
-      {
-        "name": "untitled.s",
-        "path": "files/digital-logic/802-untitled.s",
-        "format": "S",
-        "bytes": 474,
-        "primary": false
-      },
-      {
-        "name": "CSIT-230_Discussion_01.docx",
-        "path": "files/digital-logic/163-CSIT-230_Discussion_01.docx",
-        "format": "DOCX",
-        "bytes": 43727,
-        "primary": false
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
@@ -968,7 +479,9 @@
         "path": "files/game-theory/214-Duy-Hoang-Nash-Equilibrium.pdf",
         "format": "PDF",
         "bytes": 25299,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       }
     ]
   },
@@ -993,21 +506,27 @@
         "path": "files/linux-access/200-Duy-Hoang-CSIT-460-Lab-1-Part-1.pdf",
         "format": "PDF",
         "bytes": 3009586,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "Duy Hoang CSIT 460 Lab 1 Part 2.pdf",
         "path": "files/linux-access/201-Duy-Hoang-CSIT-460-Lab-1-Part-2.pdf",
         "format": "PDF",
         "bytes": 7309175,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "Duy Hoang CSIT 460 Lab 1 Part 1.docx",
         "path": "files/linux-access/199-Duy-Hoang-CSIT-460-Lab-1-Part-1.docx",
         "format": "DOCX",
         "bytes": 3084321,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       }
     ]
   },
@@ -1032,7 +551,9 @@
         "path": "files/buffer-overflow/212-Duy-Hoang-Lab-2.pdf",
         "format": "PDF",
         "bytes": 2576287,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       }
     ]
   },
@@ -1057,42 +578,45 @@
         "path": "files/network-security/203-Duy-Hoang-CSIT-460-Lab-3.pdf",
         "format": "PDF",
         "bytes": 3997260,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       },
       {
         "name": "Firewall_Lab_Report.docx",
         "path": "files/network-security/265-Firewall_Lab_Report.docx",
         "format": "DOCX",
         "bytes": 34628,
-        "primary": true
-      },
-      {
-        "name": "Untitled document (1).pdf",
-        "path": "files/network-security/794-Untitled-document-1.pdf",
-        "format": "PDF",
-        "bytes": 2620473,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Untitled document (2) (1) (1).docx",
         "path": "files/network-security/795-Untitled-document-2-1-1.docx",
         "format": "DOCX",
         "bytes": 2076676,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Untitled document (3).docx",
         "path": "files/network-security/798-Untitled-document-3.docx",
         "format": "DOCX",
         "bytes": 3072424,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy Hoang",
+        "name_match_location": "contents"
       },
       {
         "name": "Untitled document.pdf",
         "path": "files/network-security/801-Untitled-document.pdf",
         "format": "PDF",
         "bytes": 2620812,
-        "primary": false
+        "primary": false,
+        "name_match": "Duy  Hoang",
+        "name_match_location": "contents"
       }
     ]
   },
@@ -1117,7 +641,9 @@
         "path": "files/web-security/204-Duy-Hoang-CSIT-460-Lab-4.pdf",
         "format": "PDF",
         "bytes": 7899545,
-        "primary": true
+        "primary": true,
+        "name_match": "Duy Hoang",
+        "name_match_location": "filename"
       }
     ]
   }

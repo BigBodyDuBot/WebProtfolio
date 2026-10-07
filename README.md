@@ -1,24 +1,29 @@
 # Duy Hoang — Academic Portfolio
 
-A central index of school projects, laboratory reports, calculations and source code.
+A central index of 15 school projects and 42 supporting files bearing **Duy Hoang** or **Duy Linh Hoang** in the original filename or visible contents.
 
 **Website:** https://BigBodyDuBot.github.io/WebProtfolio/
 
 ## Browse
 
-- Chemistry: analytical measurements, titration, precision, spectrophotometry and chemistry coursework.
 - Software: graphics, operating systems, concurrency, languages, algorithms and digital logic.
-- Data: databases, SQL, statistics and analytical reasoning.
+- Data: relational schemas, database coursework and analytical reasoning.
 - Cybersecurity: Linux access controls, memory safety, networking and web security labs.
 
-Each project explains the work, its purpose and the resulting academic deliverables. Reports and original files are linked from the project page. Source files can also be read directly on the site.
+Each project explains the work, its purpose and the resulting academic deliverables. Reports and original files are linked from the project page. Retained source files can also be read directly on the site.
+
+## Name-based inclusion rule
+
+Only coursework with **Duy Hoang** or **Duy Linh Hoang** in its original filename or visible contents is included. Names split by spaces or line breaks are recognized; scans were also checked visually. A computer username in a filesystem path, generated website heading, surname alone, or another file from the same project does not qualify a file. Coauthored work is retained when it includes the required name, with the other authors still credited.
+
+The name review retained 42 of the previous 104 attachments. Projects without a qualifying attachment were removed, including the chemistry projects. Each retained resource in `projects.json` records where its name was verified.
 
 This is a coursework portfolio. Draft analyses are identified on the relevant pages. Claims are limited to the documented academic work; no commercial outcomes or production deployments are implied. Original coauthor and course-scaffold credits are retained. Standalone photographs, unrelated personal files, resumes, restaurant material and exam files are not included. Exact duplicate files are omitted; other versions remain grouped with their project.
 
 ## Update the site
 
-1. Add supporting files under `files/<project-id>/`.
-2. Add or edit a project in `projects.json`. Use the existing entries as a template, including relative file paths and byte sizes.
+1. Verify that a supporting file contains one of the two full names, then add it under `files/<project-id>/`.
+2. Add or edit a project in `projects.json`. Use the existing entries as a template, including relative file paths, byte sizes, `name_match` and `name_match_location`.
 3. Run `python build.py` to regenerate the index, project pages and source previews. Python 3 is the only build dependency.
 4. Commit the updated data, files and generated pages, then push to `main`.
 
