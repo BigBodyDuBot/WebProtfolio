@@ -1,6 +1,6 @@
 # Duy Hoang — Academic Portfolio
 
-A central index of 24 academic projects with 59 files drawn exclusively from the seven project folders supplied on October 7, 2026. This collection replaces the previous website archive.
+A central index of 24 academic projects with 41 files drawn exclusively from the seven project folders supplied on October 7, 2026. This collection replaces the previous website archive.
 
 **Website:** https://bigbodydubot.github.io/WebProtfolio/
 
@@ -11,13 +11,13 @@ A central index of 24 academic projects with 59 files drawn exclusively from the
 - Data: statistical literacy, descriptive summaries, regression, probability, z-scores and a Python/SQLite enrollment application.
 - Cybersecurity: Linux access control, Set-UID, memory protections, packet handling, firewalls and web-security labs.
 
-Each project explains the work, its purpose and the documented outcome. Reports, measurements, code and presentations are linked from the project pages. Instructor assignment instructions, course examples and supplied datasets are labeled explicitly. They provide context rather than evidence that every requested task was completed. Collaborator and course-scaffold credits remain intact.
+Each project explains the work, its purpose and the documented outcome. Reports, measurements, code and presentations are linked from the project pages. Collaborator and course-scaffold credits remain intact.
 
 ## Collection and attribution
 
-Only materials from the newly supplied Computer Networks, Analytical Chemistry, Computer Security, Data Science and Statistics, Linear Algebra, Database Systems and Operating Systems folders are used. The user authorized inclusion of these supplied project files even when their full name is absent. Topic-based filenames preserve the original formats; projects.json records original filenames, file roles and source-course attribution.
+Only materials from the newly supplied Computer Networks, Analytical Chemistry, Computer Security, Data Science and Statistics, Linear Algebra, Database Systems and Operating Systems folders are used. The user authorized inclusion of these supplied project files even when their full name is absent. Topic-based filenames preserve the original formats; projects.json records original filenames, file roles and original attribution.
 
-Standalone images and restaurant-related projects are excluded according to the user's preferences. Instructor briefs without associated eligible completed work are omitted. The third-party news article used by the statistical-literacy assignment is not republished. The message-queue homework ZIP was unpacked into two C source files; its standalone screenshot is excluded. Content hashes were checked to avoid exact duplicate attachments.
+Standalone images and restaurant-related projects are excluded according to the user's preferences. Instructor briefs, example workbooks and instructor-supplied datasets are omitted. Course names and numbers are removed from project labels. The third-party news article used by the statistical-literacy assignment is not republished. The message-queue homework ZIP was unpacked into two C source files; its standalone screenshot is excluded. Content hashes were checked to avoid exact duplicate attachments.
 
 Academic reports are preserved as supplied. Project descriptions distinguish recorded findings from confirmed accuracy or production outcomes and note material limitations in the original work.
 
@@ -49,8 +49,8 @@ Publish from the main branch and repository root in Settings → Pages. The .noj
 - projects.json: project descriptions, file metadata and attribution
 - projects/: generated project pages
 - source/: generated code and text previews
-- files/: coursework, measurements and labeled assignment references
+- files/: project work, measurements and code
 - styles.css, app.js: existing presentation and filtering
 - build.py: standard-library static site generator
 
-Original course materials, collaborator contributions and library references retain their attribution. No blanket license is applied to academic attachments.
+Original collaborator contributions, scaffold comments and library references retain their attribution. No blanket license is applied to academic attachments.
