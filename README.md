@@ -4,6 +4,10 @@ A central index of 24 academic projects with 44 files drawn exclusively from the
 
 **Website:** https://bigbodydubot.github.io/WebProtfolio/
 
+**Resume:** [PDF](resume/Duy_Linh_Hoang_Resume.pdf) · [Editable Word document](resume/Duy_Linh_Hoang_Resume.docx)
+
+The universal resume summarizes current education, skills, work history and selected academic projects. It is available from the website navigation and About section; personal reference contacts are omitted from the public version.
+
 ## Browse
 
 - Chemistry: spectrophotometric calibration, internal standards, acid-base titration and measurement statistics.
@@ -15,7 +19,7 @@ Each project explains the work, its purpose and the documented outcome. Reports,
 
 ## Collection and attribution
 
-Only materials from the newly supplied Computer Networks, Analytical Chemistry, Computer Security, Data Science and Statistics, Linear Algebra, Database Systems and Operating Systems folders are used. The user authorized inclusion of these supplied project files even when their full name is absent. Topic-based filenames preserve the original formats; projects.json records original filenames, file roles and original attribution.
+The project collection uses only materials from the newly supplied Computer Networks, Analytical Chemistry, Computer Security, Data Science and Statistics, Linear Algebra, Database Systems and Operating Systems folders. The user authorized inclusion of these supplied project files even when their full name is absent. Topic-based filenames preserve the original formats; projects.json records original filenames, file roles and original attribution.
 
 Standalone images and restaurant-related projects are excluded according to the user's preferences. Instructor briefs, example workbooks and instructor-supplied datasets are omitted. Course names and numbers are removed from project labels. The third-party news article used by the statistical-literacy assignment is not republished. The message-queue homework ZIP was unpacked into two C source files; its standalone screenshot is excluded. Content hashes were checked to avoid exact duplicate attachments.
 
