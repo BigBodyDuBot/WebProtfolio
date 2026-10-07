@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bounded_Buffer_Producer_Consumer_Duy_Hoang.c | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/os-thread-synchronization.html">← Back to project</a><h1 class="source-title">Bounded_Buffer_Producer_Consumer_Duy_Hoang.c</h1><a class="download" href="../../files/os-thread-synchronization/Bounded_Buffer_Producer_Consumer_Duy_Hoang.c" download>Download original · C</a><pre class="code">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;semaphore.h&gt;	
+
+#define BUFFER_SIZE 5
+
+int buffer[BUFFER_SIZE];
+int in = 0;
+int out = 0;
+int temp1;
+int temp2;
+int temp3;
+int temp4;
+
+sem_t mutex;
+sem_t empty;
+sem_t full;
+
+void *producer(void *param){
+	int item_produced = 1;
+	while (1){
+		//while (counter == BUFFER_SIZE);
+		sem_wait(&amp;empty);
+		sem_wait(&amp;mutex);
+		buffer[in] = item_produced;
+		in = (in + 1)%BUFFER_SIZE;
+		//counter++;
+
+		sem_getvalue(&amp;empty, &amp;temp1);
+		sem_getvalue(&amp;full, &amp;temp2);
+
+		printf(&quot;producer produced an item, counter is: %d and the value of full is%d\n&quot;, temp1, temp2);
+		sleep(1);
+		sem_post(&amp;mutex);
+		sem_post(&amp;full);
+
+	}
+}
+
+
+void *consumer(void * param){
+	while (1){
+		//while(counter == 0);
+		sem_wait(&amp;full);
+		sem_wait(&amp;mutex);
+		int item = buffer[out];
+		out = (out+1)%BUFFER_SIZE;
+		//counter--;
+		sleep(2);
+		sem_getvalue(&amp;empty, &amp;temp3);
+		sem_getvalue(&amp;full, &amp;temp4);
+		printf(&quot;Consumer consumed %d items, full: %d, empty: %d\n&quot; , item, temp4, temp3);
+		sem_post(&amp;mutex);
+		sem_post(&amp;empty);
+	}
+}
+
+int main(){
+	sem_init(&amp;mutex,0 ,1);
+	sem_init(&amp;empty, 0, BUFFER_SIZE);
+	sem_init(&amp;full, 0, 0);
+	
+	pthread_t thread1, thread2;
+
+	pthread_create(&amp;thread1, NULL, producer, NULL);
+	pthread_create(&amp;thread2, NULL, consumer, NULL);
+
+	pthread_join(thread1, NULL);
+	pthread_join(thread2, NULL);
+
+	sem_destroy(&amp;mutex);
+	sem_destroy(&amp;empty);
+	sem_destroy(&amp;full);
+	return 0;
+
+}
+
+
+</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

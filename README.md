@@ -1,48 +1,56 @@
 # Duy Hoang — Academic Portfolio
 
-A central index of 15 school projects and 26 supporting files bearing **Duy Hoang** or **Duy Linh Hoang** in the original filename or visible contents.
+A central index of 24 academic projects with 59 files drawn exclusively from the seven project folders supplied on October 7, 2026. This collection replaces the previous website archive.
 
-**Website:** https://BigBodyDuBot.github.io/WebProtfolio/
+**Website:** https://bigbodydubot.github.io/WebProtfolio/
 
 ## Browse
 
-- Software: graphics, operating systems, concurrency, languages, algorithms and digital logic.
-- Data: relational schemas, database coursework and analytical reasoning.
-- Cybersecurity: Linux access controls, memory safety, networking and web security labs.
+- Chemistry: spectrophotometric calibration, internal standards, acid-base titration and measurement statistics.
+- Software: computer networks, HTTP sockets, matrix projections, Linux modules, signals, synchronization, message queues and xv6 scheduling.
+- Data: statistical literacy, descriptive summaries, regression, probability, z-scores and a Python/SQLite enrollment application.
+- Cybersecurity: Linux access control, Set-UID, memory protections, packet handling, firewalls and web-security labs.
 
-Each project explains the work, its purpose and the resulting academic deliverables. Reports and original files are linked from the project page. Retained source files can also be read directly on the site.
+Each project explains the work, its purpose and the documented outcome. Reports, measurements, code and presentations are linked from the project pages. Instructor assignment instructions, course examples and supplied datasets are labeled explicitly. They provide context rather than evidence that every requested task was completed. Collaborator and course-scaffold credits remain intact.
 
-## Name-based inclusion rule
+## Collection and attribution
 
-Only coursework with **Duy Hoang** or **Duy Linh Hoang** in its original filename or visible contents is included. Names split by spaces or line breaks are recognized; scans were also checked visually. A computer username in a filesystem path, generated website heading, surname alone, or another file from the same project does not qualify a file. Coauthored work is retained when it includes the required name, with the other authors still credited.
+Only materials from the newly supplied Computer Networks, Analytical Chemistry, Computer Security, Data Science and Statistics, Linear Algebra, Database Systems and Operating Systems folders are used. The user authorized inclusion of these supplied project files even when their full name is absent. Topic-based filenames preserve the original formats; projects.json records original filenames, file roles and source-course attribution.
 
-The name review retained 42 of the previous 104 attachments. A subsequent content review consolidated 16 redundant versions, leaving 26 distinct supporting files. Projects without a qualifying attachment were removed, including the chemistry projects. Each retained resource in `projects.json` records where its name was verified.
+Standalone images and restaurant-related projects are excluded according to the user's preferences. Instructor briefs without associated eligible completed work are omitted. The third-party news article used by the statistical-literacy assignment is not republished. The message-queue homework ZIP was unpacked into two C source files; its standalone screenshot is excluded. Content hashes were checked to avoid exact duplicate attachments.
 
-This is a coursework portfolio. Draft analyses are identified on the relevant pages. Claims are limited to the documented academic work; no commercial outcomes or production deployments are implied. Original coauthor and course-scaffold credits are retained. Standalone photographs, unrelated personal files, resumes, restaurant material and exam files are not included. Duplicate copies, repeated format exports and superseded report/code drafts are omitted. Each remaining academic file has a descriptive topic-based filename ending in Duy_Hoang; original filenames and authorship evidence are preserved in projects.json. Distinct reports, source code, proposals and presentations remain separate.
+Academic reports are preserved as supplied. Project descriptions distinguish recorded findings from confirmed accuracy or production outcomes and note material limitations in the original work.
+
+## Renaming and dependencies
+
+The enrollment application resolves University_Enrollment_Database_Duy_Hoang.db beside its source file. Download both into the same folder before running it with Python 3. The kernel module build file targets Linux_Module_Lifecycle_Duy_Hoang.c; use make -f Linux_Module_Build_Duy_Hoang in that folder on a matching Linux kernel development environment. These are filename compatibility changes; coursework logic is preserved.
+
+The HTTP server and client are local Python exercises. Their HTML test page is displayed as escaped source in the portfolio. Packet Tracer files require Cisco Packet Tracer. The xv6 scheduler file requires its surrounding source tree. Security scripts are displayed as source, not executed by the website.
 
 ## Update the site
 
-1. Verify that a supporting file contains one of the two full names, then add it under `files/<project-id>/`.
-2. Add or edit a project in `projects.json`. Use the existing entries as a template, including relative file paths, byte sizes, `name_match` and `name_match_location`.
-3. Run `python build.py` to regenerate the index, project pages and source previews. Python 3 is the only build dependency.
-4. Commit the updated data, files and generated pages, then push to `main`.
+1. Add a supporting file under files/<project-id>/ with a descriptive filename.
+2. Add or edit its resource entry in projects.json, including role, byte size and attribution.
+3. Run python build.py to regenerate the index, project pages and source previews. Python 3 is the only build dependency.
+4. When removing a resource or project, remove its obsolete generated page or source preview too.
+5. Commit the updated collection and generated pages, then push to main.
 
-For a local preview, run `python -m http.server 8000` from this folder and open http://localhost:8000.
+For a local preview, run python -m http.server 8000 from this folder and open http://localhost:8000.
 
-The site uses HTML, CSS and a small JavaScript search/filter enhancement. All project links and downloads work without JavaScript. There are no analytics, external fonts or third-party page scripts.
+The existing page layout, styling, navigation and search/filter interaction are retained. Project links and downloads work without JavaScript. There are no analytics, external fonts or third-party page scripts.
 
 ## GitHub Pages
 
-Publish from the `main` branch and the repository root (`/`) in **Settings → Pages**. `.nojekyll` allows GitHub Pages to serve the generated files directly. All project and file URLs are relative to support the `/WebProtfolio/` base path.
+Publish from the main branch and repository root in Settings → Pages. The .nojekyll file allows GitHub Pages to serve the generated files directly. Project and file URLs are relative to support the /WebProtfolio/ base path.
 
 ## File structure
 
-- `index.html`: central project index
-- `projects.json`: editable project descriptions and file metadata
-- `projects/`: generated project pages
-- `source/`: generated read-only code and notebook previews
-- `files/`: original coursework and reports
-- `styles.css`, `app.js`: presentation and filtering
-- `build.py`: standard-library static site generator
+- index.html: central project index
+- projects.json: project descriptions, file metadata and attribution
+- projects/: generated project pages
+- source/: generated code and text previews
+- files/: coursework, measurements and labeled assignment references
+- styles.css, app.js: existing presentation and filtering
+- build.py: standard-library static site generator
 
-Original course materials, collaborator contributions and library references retain their existing attribution. No blanket license is applied to the academic attachments.
+Original course materials, collaborator contributions and library references retain their attribution. No blanket license is applied to academic attachments.

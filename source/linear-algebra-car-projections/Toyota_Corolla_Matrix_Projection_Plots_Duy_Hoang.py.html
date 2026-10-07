@@ -1,0 +1,159 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Toyota_Corolla_Matrix_Projection_Plots_Duy_Hoang.py | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/linear-algebra-car-projections.html">← Back to project</a><h1 class="source-title">Toyota_Corolla_Matrix_Projection_Plots_Duy_Hoang.py</h1><a class="download" href="../../files/linear-algebra-car-projections/Toyota_Corolla_Matrix_Projection_Plots_Duy_Hoang.py" download>Download original · PY</a><pre class="code">import numpy as np
+import matplotlib.pyplot as plt
+from math import cos, sin, radians, pi
+
+# points are in format [x, y, z, w] where w=1 for homogeneous coordinates
+
+corolla_pts = np.array([
+    [-6.5, -6.5, -6.5, -6.5, -2.5, -2.5, -0.75, -0.75, 3.25, 3.25, 4.5, 4.5, 6.5, 6.5, 6.5, 6.5],
+    [-2, -2, 0.5, 0.5, 0.5, 0.5, 2, 2, 2, 2, 0.5, 0.5, 0.5, 0.5, -2, -2],
+    [-2.5, 2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 2.5, -2.5, 2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+])
+
+# This matrix defines which points are connected
+connections = np.array([
+    [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0],
+    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0]
+])
+
+
+class MatrixTransformations:
+    @staticmethod
+    def get_persp_matrix(eye_x, eye_y, eye_z):
+        return np.array([
+            [1, 0, -eye_x / eye_z, 0],
+            [0, 1, -eye_y / eye_z, 0],
+            [0, 0, 0, 0],
+            [0, 0, -1 / eye_z, 1]
+        ])
+
+    @staticmethod
+    def get_y_rotation(angle_deg):
+        theta = angle_deg * pi / 180 
+        return np.array([
+            [cos(theta), 0, sin(theta), 0],
+            [0, 1, 0, 0],
+            [-sin(theta), 0, cos(theta), 0],
+            [0, 0, 0, 1]
+        ])
+
+    @staticmethod
+    def get_z_rotation(angle_deg):
+        theta = radians(angle_deg)
+        return np.array([
+            [cos(theta), -sin(theta), 0, 0],
+            [sin(theta), cos(theta), 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]
+        ])
+
+    @staticmethod
+    def zoom(scale_factor):
+        zoom_mtx = np.array([
+            [scale_factor, 0, 0, 0],
+            [0, scale_factor, 0, 0],
+            [0, 0, scale_factor, 0],
+            [0, 0, 0, 1]
+        ])
+        return zoom_mtx
+
+def visualize_proj(transformed_pts, connection_matrix, plot_title=&quot;Car Projection&quot;,
+                   point_color=&#x27;blue&#x27;, line_color=&#x27;darkblue&#x27;, bg_color=&#x27;#f0f0f8&#x27;):
+    x_coords, y_coords = transformed_pts[0], transformed_pts[1]
+
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+
+    for i in range(len(x_coords)):
+        for j in range(len(x_coords)):
+            if connection_matrix[i][j] == 1:
+                ax.plot([x_coords[i], x_coords[j]], [y_coords[i], y_coords[j]],
+                        color=line_color, linewidth=1.5)
+
+    ax.scatter(x_coords, y_coords, color=point_color, s=30, zorder=5)
+
+    ax.set_facecolor(bg_color)
+    ax.set_title(plot_title, fontsize=14)
+    ax.set_xlabel(&#x27;X-axis projection&#x27;)
+    ax.set_ylabel(&#x27;Y-axis projection&#x27;)
+    ax.grid(True, linestyle=&#x27;--&#x27;, alpha=0.7)
+    ax.set_aspect(&#x27;equal&#x27;)
+
+    plt.figtext(0.02, 0.02, &quot;AMAT 240 - Duy Hoang&quot;, fontsize=8)
+
+    plt.tight_layout()
+    plt.show()
+
+
+def apply_transformations(points, transform_matrix, eye_pos):
+    b, c, d = eye_pos
+
+    # First apply the transformation matrix (rotation, scaling, etc)
+    transformed = transform_matrix @ points
+
+    #Then apply the perspective projection
+    projection_matrix = MatrixTransformations.get_persp_matrix(b, c, d)
+    projected = projection_matrix @ transformed
+
+    # Normalize the homogeneous coordinates
+    for i in range(projected.shape[1]):
+        projected[:, i] = projected[:, i] / projected[3, i]
+
+    return projected
+
+results = {}
+
+# Q1: Projection from eye position (-5, 10, 10)
+eye_pos1 = (-5, 10, 10)
+identity = np.identity(4)  # no transformation, just projection
+projected1 = apply_transformations(corolla_pts, identity, eye_pos1)
+visualize_proj(projected1, connections, &quot;Q1: Perspective from left-rear elevated position (-5, 10, 10)&quot;)
+results[&quot;q1&quot;] = projected1
+
+# Q2: Projection from eye position (0, 10, 25)
+eye_pos2 = (0, 10, 25)
+projected2 = apply_transformations(corolla_pts, identity, eye_pos2)
+visualize_proj(projected2, connections,
+               &quot;Q2: Perspective from behind and above (0, 10, 25)&quot;,
+               point_color=&#x27;darkred&#x27;, line_color=&#x27;red&#x27;)
+results[&quot;q2&quot;] = projected2
+
+# Q3: Rotate 30° about Y-axis, then project from (0, 10, 25)
+transform_y = MatrixTransformations.get_y_rotation(30)
+projected3 = apply_transformations(corolla_pts, transform_y, eye_pos2)
+visualize_proj(projected3, connections,
+               &quot;Q3: 30° Y-rotation + projection from (0, 10, 25)&quot;,
+               point_color=&#x27;darkgreen&#x27;, line_color=&#x27;green&#x27;)
+results[&quot;q3&quot;] = projected3
+
+# Q4: Rotate 45° about Z-axis, then project from (0, 10, 25)
+transform_z = MatrixTransformations.get_z_rotation(45)
+projected4 = apply_transformations(corolla_pts, transform_z, eye_pos2)
+visualize_proj(projected4, connections,
+               &quot;Q4: 45° Z-rotation + projection from (0, 10, 25)&quot;,
+               point_color=&#x27;purple&#x27;, line_color=&#x27;darkviolet&#x27;)
+results[&quot;q4&quot;] = projected4
+
+# Q5: Zoom 150% (scale by 1.5), then project from (0, 10, 25)
+transform_zoom = MatrixTransformations.zoom(1.5)
+projected5 = apply_transformations(corolla_pts, transform_zoom, eye_pos2)
+visualize_proj(projected5, connections,
+               &quot;Q5: 150% Zoom + projection from (0, 10, 25)&quot;,
+               point_color=&#x27;darkorange&#x27;, line_color=&#x27;orange&#x27;)
+results[&quot;q5&quot;] = projected5
+</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

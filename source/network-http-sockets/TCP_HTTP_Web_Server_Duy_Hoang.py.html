@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TCP_HTTP_Web_Server_Duy_Hoang.py | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/network-http-sockets.html">← Back to project</a><h1 class="source-title">TCP_HTTP_Web_Server_Duy_Hoang.py</h1><a class="download" href="../../files/network-http-sockets/TCP_HTTP_Web_Server_Duy_Hoang.py" download>Download original · PY</a><pre class="code"># import socket module
+from socket import *
+import sys  # In order to terminate the program
+
+serverSocket = socket(AF_INET, SOCK_STREAM)
+
+# Prepare a server socket
+# Fill in start
+serverPort = 6789
+serverSocket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+serverSocket.bind((&#x27;127.0.0.1&#x27;, serverPort))
+serverSocket.listen(1)
+# Fill in end
+
+while True:
+    # Establish the connection
+    print(&#x27;Ready to serve...&#x27;)
+    # Fill in start
+    connectionSocket, addr = serverSocket.accept()
+    # Fill in end
+    try:
+        # Fill in start
+        message = connectionSocket.recv(1024).decode()
+        # Fill in end
+
+        filename = message.split()[1]
+        f = open(filename[1:], &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;)
+
+        # Fill in start
+        outputdata = f.read()
+        # Fill in end
+
+        # Send one HTTP header line into socket
+        # Fill in start
+        header = (
+            &quot;HTTP/1.1 200 OK\r\n&quot;
+            f&quot;Content-Length: {len(outputdata.encode())}\r\n&quot;
+            &quot;Content-Type: text/html; charset=utf-8\r\n&quot;
+            &quot;Connection: close\r\n&quot;
+            &quot;\r\n&quot;
+        )
+        connectionSocket.send(header.encode())
+        # Fill in end
+
+        # Send the content of the requested file to the client
+        for i in range(0, len(outputdata)):
+            connectionSocket.send(outputdata[i].encode())
+        connectionSocket.send(&quot;\r\n&quot;.encode())
+
+        connectionSocket.close()
+
+    except IOError:
+        # Send response message for file not found
+        # Fill in start
+        body = (
+            &quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;&quot;
+            &quot;&lt;body&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&quot;
+            &quot;&lt;p&gt;The requested file was not found on this server.&lt;/p&gt;&quot;
+            &quot;&lt;/body&gt;&lt;/html&gt;&quot;
+        )
+        response = (
+            &quot;HTTP/1.1 404 Not Found\r\n&quot;
+            f&quot;Content-Length: {len(body.encode())}\r\n&quot;
+            &quot;Content-Type: text/html; charset=utf-8\r\n&quot;
+            &quot;Connection: close\r\n&quot;
+            &quot;\r\n&quot;
+            f&quot;{body}&quot;
+        )
+        connectionSocket.send(response.encode())
+        # Fill in end
+
+        # Close client socket
+        # Fill in start
+        connectionSocket.close()
+        # Fill in end
+
+serverSocket.close()
+sys.exit()  # Terminate the program after sending the corresponding data
+</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>

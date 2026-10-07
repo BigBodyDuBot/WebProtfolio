@@ -1,583 +1,1325 @@
 [
   {
-    "id": "course-registration",
-    "title": "Designing a course enrollment schema",
-    "category": "Data",
-    "summary": "Named coursework documents for a university relational schema.",
-    "did": "Defined a university schema with students, courses and enrollments, documenting primary keys, a composite enrollment key and foreign-key relationships.",
-    "why": "Explicit keys and relationships organize records and describe how student and course data connect.",
-    "outcome": "Produced a relational-schema report documenting the student, course and enrollment relationships, with the original collaborator credits preserved.",
+    "id": "chemistry-calibration",
+    "title": "Comparing external calibration and standard addition",
+    "category": "Chemistry",
+    "course": "CHEM 310",
+    "summary": "Spectrophotometric analysis of potassium ferricyanide using two calibration methods.",
+    "did": "Prepared calibration standards, measured blank and sample absorbance at 420 nm, and used Excel regressions to compare external-standard calibration with standard addition. Recorded replicate measurements and calculated uncertainty, detection limits and concentrations.",
+    "why": "Calibration choice affects how reliably an instrument signal can be translated into concentration, especially when other components in the sample alter that signal.",
+    "outcome": "Produced a full report and calculation workbook documenting the method comparison and a large difference between the two concentration estimates, prompting discussion of matrix effects and measurement uncertainty.",
     "tags": [
-      "Relational design",
-      "Primary keys",
-      "Foreign keys"
+      "UV-Vis",
+      "Calibration",
+      "Excel",
+      "Uncertainty",
+      "CHEM 310"
     ],
-    "note": "",
-    "credit": "The final report lists Duy Hoang and Leighanna Navales. Original report credits are retained.",
+    "note": "The report records an exploratory method comparison. Agreement with a reference concentration was not established for the unknown; a high calibration R² alone does not establish accuracy.",
+    "credit": "The report credits Duy Hoang and lab partner Rook Brianna. Original attribution is preserved.",
     "resources": [
       {
-        "name": "University_Course_Enrollment_Database_Schema_Duy_Hoang.pdf",
-        "path": "files/course-registration/University_Course_Enrollment_Database_Schema_Duy_Hoang.pdf",
+        "name": "Ferricyanide_Calibration_and_Standard_Addition_Report_Duy_Hoang.pdf",
+        "path": "files/chemistry-calibration/Ferricyanide_Calibration_and_Standard_Addition_Report_Duy_Hoang.pdf",
         "format": "PDF",
-        "bytes": 45964,
+        "bytes": 248665,
         "primary": true,
-        "name_match": "Duy  Hoang",
-        "name_match_location": "contents",
-        "original_name": "Duy Leigh CSIT 355 Final Project.pdf",
-        "original_path": "files/course-registration/222-Duy-Leigh-CSIT-355-Final-Project.pdf",
-        "label": "University Course Enrollment Database Schema"
+        "label": "Ferricyanide Calibration and Standard Addition Report",
+        "role": "Project report",
+        "original_name": "Analytical_Chemistry_Lab_Report (1).pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 1,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "976c9c1d8472b8d6a7cf75657dbf011098fba0fc225e768a237ef4cb1c5c87e0"
+      },
+      {
+        "name": "Ferricyanide_Calibration_Measurements_and_Calculations_Duy_Hoang.xlsx",
+        "path": "files/chemistry-calibration/Ferricyanide_Calibration_Measurements_and_Calculations_Duy_Hoang.xlsx",
+        "format": "XLSX",
+        "bytes": 31801,
+        "primary": false,
+        "label": "Ferricyanide Calibration Measurements and Calculations",
+        "role": "Calculation workbook",
+        "original_name": "Duy Hoang Chem 310 Lab 3.xlsx",
+        "source_course": "Analytic Chemisty",
+        "source_id": 2,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "abd57a52eb8265f172bcbc713027d640d4060d6228ea5cfa573033fe15ed9cdd"
+      },
+      {
+        "name": "External_Standard_Calibration_Lab_Instructions.pdf",
+        "path": "files/chemistry-calibration/External_Standard_Calibration_Lab_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 101213,
+        "primary": false,
+        "label": "External Standard Calibration Lab Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Experiment 3_part 1_Full Lab Rerpot_external standard and standard addition (2).pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 5,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "b0781663f9f7095a42e13d353346989b73278ac81a9476d993d01607a4538b2c"
+      },
+      {
+        "name": "Standard_Addition_Lab_Instructions.pdf",
+        "path": "files/chemistry-calibration/Standard_Addition_Lab_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 65240,
+        "primary": false,
+        "label": "Standard Addition Lab Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Experiment 3_part 2_Full Lab Report_external standard and standard addition (1).pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 6,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "5a782893aa45053a0cea8e2e3f799591b68da499613067605aa8555e4da1bffa"
+      },
+      {
+        "name": "Standard_Addition_Course_Example_Workbook.xlsx",
+        "path": "files/chemistry-calibration/Standard_Addition_Course_Example_Workbook.xlsx",
+        "format": "XLSX",
+        "bytes": 72345,
+        "primary": false,
+        "label": "Standard Addition Course Example Workbook",
+        "role": "Course example",
+        "original_name": "Experiment_3_Part_2_Standard_Addition_empty_example-17605568841670277 (1).xlsx",
+        "source_course": "Analytic Chemisty",
+        "source_id": 11,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "dbc3ac5803677b222d778cfa9e6bfcba43c9d77f9eb5e0df72dc829561514bae"
       }
     ]
   },
   {
-    "id": "sql-coursework",
-    "title": "Writing relational algebra queries",
-    "category": "Data",
-    "summary": "Named database coursework with written query solutions.",
-    "did": "Completed database assignments involving query formulation and relational reasoning.",
-    "why": "Translating a question into a query is a foundation for retrieving useful information from structured data.",
-    "outcome": "Produced a scanned assignment with handwritten relational algebra query solutions.",
+    "id": "chemistry-internal-standard",
+    "title": "Measuring nickel with an internal standard",
+    "category": "Chemistry",
+    "course": "CHEM 310",
+    "summary": "Nickel and cobalt absorbance ratios used to evaluate concentration and analytical error.",
+    "did": "Collected blank and replicate absorbance measurements for nickel and cobalt solutions, calculated corrected signal ratios, and fitted a calibration line to estimate an unknown nickel concentration.",
+    "why": "An internal standard helps account for variation in instrument response. Comparing the estimate with a reference value separates measurement agreement from calibration linearity.",
+    "outcome": "Produced a report and Excel workbook documenting the calibration, concentration estimate and sources of error. The report identifies a difference from the instructor-provided reference and proposes improvements in volumetric and cuvette technique.",
     "tags": [
-      "Databases",
-      "Queries",
-      "Relational reasoning"
+      "Internal standard",
+      "Absorbance",
+      "Error analysis",
+      "CHEM 310"
+    ],
+    "note": "The original report labels this fluorescence spectroscopy, but its calculations use absorbance. Its stated standard deviation and relative standard deviation require reconciliation before making a precision claim.",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Nickel_Internal_Standard_Analysis_Report_Duy_Hoang.pdf",
+        "path": "files/chemistry-internal-standard/Nickel_Internal_Standard_Analysis_Report_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 110759,
+        "primary": true,
+        "label": "Nickel Internal Standard Analysis Report",
+        "role": "Project report",
+        "original_name": "Untitled document (1).pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 14,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "28ac3192499f1ad93de86ecc1a3f963357db2712a178a23c0cb9297a7a74ff81"
+      },
+      {
+        "name": "Nickel_Cobalt_Absorbance_and_Calibration_Data_Duy_Hoang.xlsx",
+        "path": "files/chemistry-internal-standard/Nickel_Cobalt_Absorbance_and_Calibration_Data_Duy_Hoang.xlsx",
+        "format": "XLSX",
+        "bytes": 21244,
+        "primary": false,
+        "label": "Nickel Cobalt Absorbance and Calibration Data",
+        "role": "Calculation workbook",
+        "original_name": "Duy Hoang Lab 4.xlsx",
+        "source_course": "Analytic Chemisty",
+        "source_id": 3,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "af11ee231167fc11d1977dfea0997e19defc217ab2a9c7bccc0b2026f766d467"
+      },
+      {
+        "name": "Nickel_Internal_Standard_Lab_Instructions.pdf",
+        "path": "files/chemistry-internal-standard/Nickel_Internal_Standard_Lab_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 345970,
+        "primary": false,
+        "label": "Nickel Internal Standard Lab Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Experiment 4_Short Lab Report_internal standard (2).pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 7,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "ff4d6e11c615544f6722f8c1be0e1743fbe48932546e675dfe4cf815dcccab9a"
+      }
+    ]
+  },
+  {
+    "id": "chemistry-titration",
+    "title": "Standardizing NaOH and analyzing an unknown acid",
+    "category": "Chemistry",
+    "course": "CHEM 310",
+    "summary": "Primary-standard titration, blank correction and pH-curve analysis.",
+    "did": "Prepared sodium hydroxide, standardized it against potassium hydrogen phthalate with replicate titrations, and recorded pH while titrating an unknown acid. Used Excel to calculate corrected titrant volumes and analyze the titration data.",
+    "why": "Standardization establishes the titrant concentration needed for quantitative acid analysis. Replicate measurements and blank corrections help evaluate the reliability of the result.",
+    "outcome": "Produced a full report and workbook documenting a reported NaOH concentration of 0.1066 M, the titration curve and the unknown-acid calculation.",
+    "tags": [
+      "Titration",
+      "KHP",
+      "pH",
+      "Volumetric analysis",
+      "CHEM 310"
+    ],
+    "note": "The report contains inconsistent equivalence-volume interpretations. The acid identity and diprotic characterization remain tentative; the portfolio presents the recorded work rather than a confirmed identification.",
+    "credit": "",
+    "resources": [
+      {
+        "name": "NaOH_Standardization_and_Unknown_Acid_Report_Duy_Hoang.pdf",
+        "path": "files/chemistry-titration/NaOH_Standardization_and_Unknown_Acid_Report_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 317753,
+        "primary": true,
+        "label": "NaOH Standardization and Unknown Acid Report",
+        "role": "Project report",
+        "original_name": "Standardization_of_NaOH_Titrant_and_Volumetric_Determination_of_Unknown_Acidedit (1).pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 13,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "9e25af0b0fac7c89ae880e5fd44374ed07b1ca7e602830c72f915bb70706d08f"
+      },
+      {
+        "name": "NaOH_Standardization_and_Acid_Titration_Calculations_Duy_Hoang.xlsx",
+        "path": "files/chemistry-titration/NaOH_Standardization_and_Acid_Titration_Calculations_Duy_Hoang.xlsx",
+        "format": "XLSX",
+        "bytes": 29098,
+        "primary": false,
+        "label": "NaOH Standardization and Acid Titration Calculations",
+        "role": "Calculation workbook",
+        "original_name": "Duy Hoang Lab 5.xlsx",
+        "source_course": "Analytic Chemisty",
+        "source_id": 4,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "9e0daf47525f967c4d3d9b83da2e57ada146c66d7fa075e0ebab341b5a26a132"
+      },
+      {
+        "name": "NaOH_Standardization_Lab_Instructions.pdf",
+        "path": "files/chemistry-titration/NaOH_Standardization_Lab_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 157642,
+        "primary": false,
+        "label": "NaOH Standardization Lab Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Experiment 5_Full Lab Report_standardization of NaOH and unknown acid titration_pt 1 (2).pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 8,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "ff0e59ab03ecaf910547e7dc3763dbc8d707a3505eb980ef5780740b395d5bb7"
+      },
+      {
+        "name": "Unknown_Acid_Titration_Lab_Instructions.pdf",
+        "path": "files/chemistry-titration/Unknown_Acid_Titration_Lab_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 107406,
+        "primary": false,
+        "label": "Unknown Acid Titration Lab Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Experiment 5_Full Lab Report_standardization of NaOH and unknown acid titration_pt 2 (2).pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 9,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "52ba728ecf922d8d11d163b25d28fe2737e8d6dc0bf92d711ce90a5b6d10b186"
+      }
+    ]
+  },
+  {
+    "id": "chemistry-measurement-statistics",
+    "title": "Evaluating repeated measurements of penny masses",
+    "category": "Chemistry",
+    "course": "CHEM 310",
+    "summary": "Measurement precision, confidence intervals and distribution analysis in Excel.",
+    "did": "Analyzed measured penny masses by mint and year, calculated means, standard deviations and confidence intervals, and compared the distribution with Gaussian expectations. Applied t-tests and a Grubbs outlier test.",
+    "why": "Statistical treatment helps distinguish random measurement variation from differences between groups and makes uncertainty in laboratory results explicit.",
+    "outcome": "Produced a report and multi-sheet workbook with histograms, subgroup comparisons, confidence intervals and outlier calculations.",
+    "tags": [
+      "Measurement statistics",
+      "Confidence intervals",
+      "Gaussian distribution",
+      "Excel",
+      "CHEM 310"
+    ],
+    "note": "The original report includes conflicting wording in one t-test interpretation. The workbook and original discussion are available for reviewing the calculation and conclusion together.",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Penny_Mass_Measurement_Statistics_Report_Duy_Hoang.pdf",
+        "path": "files/chemistry-measurement-statistics/Penny_Mass_Measurement_Statistics_Report_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 137191,
+        "primary": true,
+        "label": "Penny Mass Measurement Statistics Report",
+        "role": "Project report",
+        "original_name": "Untitled document.pdf",
+        "source_course": "Analytic Chemisty",
+        "source_id": 15,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "051857f01a1b8ab2a0687f24b4c56d93c12a7f9fc33d45feb9d70af400894d97"
+      },
+      {
+        "name": "Penny_Mass_Statistics_and_Test_Calculations_Duy_Hoang.xlsx",
+        "path": "files/chemistry-measurement-statistics/Penny_Mass_Statistics_and_Test_Calculations_Duy_Hoang.xlsx",
+        "format": "XLSX",
+        "bytes": 61108,
+        "primary": false,
+        "label": "Penny Mass Statistics and Test Calculations",
+        "role": "Calculation workbook",
+        "original_name": "Hoang_Stats (1).xlsx",
+        "source_course": "Analytic Chemisty",
+        "source_id": 12,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "15159c1a4aaaecc14780d31fb84c65fc869f4c6b57e717e0272e1fef6ed42b83"
+      }
+    ]
+  },
+  {
+    "id": "network-http-sockets",
+    "title": "Building a TCP web server and client",
+    "category": "Software",
+    "course": "CSIT 340",
+    "summary": "Python socket programs that exchange HTTP requests and serve an HTML page.",
+    "did": "Completed a Python server that accepts a TCP connection, parses a requested path, sends an HTTP response with headers and returns a 404 response for a missing file. Wrote a client that sends a GET request and collects the response.",
+    "why": "Implementing both sides exposes how sockets, requests, headers and file handling fit together beneath a browser request.",
+    "outcome": "Produced server and client source files plus a small HTML test page demonstrating the components of a sequential HTTP exchange.",
+    "tags": [
+      "Python",
+      "TCP sockets",
+      "HTTP",
+      "CSIT 340"
+    ],
+    "note": "This is a local course exercise with a sequential server, rather than a production web server.",
+    "credit": "The server retains the original course scaffold and fill-in markers.",
+    "resources": [
+      {
+        "name": "TCP_HTTP_Web_Server_Duy_Hoang.py",
+        "path": "files/network-http-sockets/TCP_HTTP_Web_Server_Duy_Hoang.py",
+        "format": "PY",
+        "bytes": 2346,
+        "primary": true,
+        "label": "TCP HTTP Web Server",
+        "role": "Source code",
+        "original_name": "WebServer.py",
+        "source_course": "Computer Networks",
+        "source_id": 23,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "f252f0de107c8aeeebe059012b3f76416d6605779d7fb2aad990a62a8d625b28"
+      },
+      {
+        "name": "TCP_HTTP_Request_Client_Duy_Hoang.py",
+        "path": "files/network-http-sockets/TCP_HTTP_Request_Client_Duy_Hoang.py",
+        "format": "PY",
+        "bytes": 2065,
+        "primary": true,
+        "label": "TCP HTTP Request Client",
+        "role": "Source code",
+        "original_name": "Client.py",
+        "source_course": "Computer Networks",
+        "source_id": 16,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "5529fa98c3f514ac1ee5fd2a2d8ce47883eb9e0598cf4d6c182bd6491c5c4a3d"
+      },
+      {
+        "name": "HTTP_Server_Test_Page_Duy_Hoang.html",
+        "path": "files/network-http-sockets/HTTP_Server_Test_Page_Duy_Hoang.html",
+        "format": "HTML",
+        "bytes": 128,
+        "primary": false,
+        "label": "HTTP Server Test Page",
+        "role": "Test fixture",
+        "original_name": "HelloWorld.html",
+        "source_course": "Computer Networks",
+        "source_id": 20,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "8c69526c574d96262b1c1c8961a88f77ca4d25ab6c8c58123b332c257d2d7a48"
+      },
+      {
+        "name": "TCP_Web_Server_Lab_Instructions.pdf",
+        "path": "files/network-http-sockets/TCP_Web_Server_Lab_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 104852,
+        "primary": false,
+        "label": "TCP Web Server Lab Instructions",
+        "role": "Assignment instructions",
+        "original_name": "WebServer_programming_lab_only.pdf",
+        "source_course": "Computer Networks",
+        "source_id": 24,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "63ff61589aa33ba1282c96f4466ab68a0b6138cd04c699336d930a98709c3e20"
+      }
+    ]
+  },
+  {
+    "id": "network-packet-tracer",
+    "title": "Configuring an addressed and routed network",
+    "category": "Software",
+    "course": "CSIT 340",
+    "summary": "Packet Tracer topology supported by an addressing and service configuration report.",
+    "did": "Documented a wireless LAN, router-to-router addressing, DHCP configuration and DNS settings, and supplied the associated Packet Tracer network model.",
+    "why": "Addressing, routing and name services must agree for devices to find each other and communicate across network segments.",
+    "outcome": "Produced a network configuration report and a Packet Tracer file that can be inspected together to trace the addressing and service plan.",
+    "tags": [
+      "Packet Tracer",
+      "Routing",
+      "DHCP",
+      "DNS",
+      "CSIT 340"
+    ],
+    "note": "The Packet Tracer file requires Cisco Packet Tracer to open. Its simulation was not rerun during portfolio preparation.",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Routed_Network_Addressing_and_Services_Report_Duy_Hoang.pdf",
+        "path": "files/network-packet-tracer/Routed_Network_Addressing_and_Services_Report_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 73350,
+        "primary": true,
+        "label": "Routed Network Addressing and Services Report",
+        "role": "Project report",
+        "original_name": "Duy Hoang Network Assignment Report (1).pdf",
+        "source_course": "Computer Networks",
+        "source_id": 18,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "5a4bd32a61e07ecbe5feeecac1fac2ba37dee9301c974e4e001b603dd5566616"
+      },
+      {
+        "name": "Routed_Network_Packet_Tracer_Model_Duy_Hoang.pkt",
+        "path": "files/network-packet-tracer/Routed_Network_Packet_Tracer_Model_Duy_Hoang.pkt",
+        "format": "PKT",
+        "bytes": 92646,
+        "primary": false,
+        "label": "Routed Network Packet Tracer Model",
+        "role": "Network model",
+        "original_name": "Duy Hoang Network Assignment.pkt",
+        "source_course": "Computer Networks",
+        "source_id": 19,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "05bc9153e04206c89fe36dd0c14c41dd4884220a0421abda3d2a74cf1c4353aa"
+      }
+    ]
+  },
+  {
+    "id": "network-streaming-traffic",
+    "title": "Comparing streaming network traffic",
+    "category": "Software",
+    "course": "CSIT 340",
+    "summary": "A course comparison of traffic volume, packet behavior and streaming stability.",
+    "did": "Compared Netflix, Amazon Prime Video and a third-party streaming service using Wireshark captures and browser HAR observations. Recorded downloaded bytes, packet rates and estimated bitrate, and assembled the findings in a report and presentation.",
+    "why": "Traffic measurements can reveal differences in delivery behavior and help separate observed performance from assumptions about a platform.",
+    "outcome": "Produced a joint report and presentation showing the measured traffic comparison and discussion of buffering, encryption and delivery stability in the tested sessions.",
+    "tags": [
+      "Wireshark",
+      "HAR",
+      "Traffic analysis",
+      "CSIT 340"
+    ],
+    "note": "The findings describe the tested sessions. Different capture methods and short observation windows limit broader comparisons between services.",
+    "credit": "The report credits Matthew Polanco and Duy Hoang; collaborator attribution is preserved.",
+    "resources": [
+      {
+        "name": "Streaming_Traffic_Comparison_Report_Duy_Hoang.docx",
+        "path": "files/network-streaming-traffic/Streaming_Traffic_Comparison_Report_Duy_Hoang.docx",
+        "format": "DOCX",
+        "bytes": 385646,
+        "primary": true,
+        "label": "Streaming Traffic Comparison Report",
+        "role": "Project report",
+        "original_name": "WriteUp (1).docx",
+        "source_course": "Computer Networks",
+        "source_id": 25,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "5a38f782d1c4fb3db75df35c954100010c4f6b748457df99687fa8fb44a98040"
+      },
+      {
+        "name": "Streaming_Traffic_Comparison_Presentation_Duy_Hoang.pptx",
+        "path": "files/network-streaming-traffic/Streaming_Traffic_Comparison_Presentation_Duy_Hoang.pptx",
+        "format": "PPTX",
+        "bytes": 221339,
+        "primary": false,
+        "label": "Streaming Traffic Comparison Presentation",
+        "role": "Presentation",
+        "original_name": "StreamProject (1).pptx",
+        "source_course": "Computer Networks",
+        "source_id": 22,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "7eb2cc5299b8bef634f55d4687b2c1e1a76ef4dd48d68ec80cd3c68c37b7b300"
+      },
+      {
+        "name": "Computer_Networks_Final_Project_Brief.pdf",
+        "path": "files/network-streaming-traffic/Computer_Networks_Final_Project_Brief.pdf",
+        "format": "PDF",
+        "bytes": 94045,
+        "primary": false,
+        "label": "Computer Networks Final Project Brief",
+        "role": "Assignment instructions",
+        "original_name": "CSIT 340 - Course Project Description.pdf",
+        "source_course": "Computer Networks",
+        "source_id": 17,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "f446ddd1f2a510ef0618f8b1f31b8cf2acc9698e9c7f73f5bdcf32a3c1b6a15f"
+      }
+    ]
+  },
+  {
+    "id": "security-access-control",
+    "title": "Translating access policies into Linux permissions",
+    "category": "Cybersecurity",
+    "course": "CSIT 460",
+    "summary": "Least-privilege access matrices, access lists and Linux permission checks.",
+    "did": "Translated a business access-control scenario into process and file permissions, constructed an access-control matrix and access lists, and documented Linux ownership and permission commands.",
+    "why": "Mapping policy to operating-system permissions helps ensure that each process receives the access required for its task.",
+    "outcome": "Produced a completed lab report with permission reasoning, configuration steps and verification evidence.",
+    "tags": [
+      "Least privilege",
+      "ACL",
+      "chmod",
+      "Linux",
+      "CSIT 460"
     ],
     "note": "",
     "credit": "",
     "resources": [
       {
-        "name": "Relational_Algebra_Query_Exercises_Duy_Hoang.pdf",
-        "path": "files/sql-coursework/Relational_Algebra_Query_Exercises_Duy_Hoang.pdf",
+        "name": "Linux_Access_Control_and_Permissions_Report_Duy_Hoang.pdf",
+        "path": "files/security-access-control/Linux_Access_Control_and_Permissions_Report_Duy_Hoang.pdf",
         "format": "PDF",
-        "bytes": 440328,
+        "bytes": 3009586,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "handwritten contents, visually verified; page 3",
-        "original_name": "Hoang_Duy_HW2.pdf.pdf",
-        "original_path": "files/sql-coursework/275-Hoang_Duy_HW2.pdf.pdf",
-        "label": "Relational Algebra Query Exercises"
+        "label": "Linux Access Control and Permissions Report",
+        "role": "Project report",
+        "original_name": "Duy Hoang CSIT 460 Lab 1 Part 1.pdf",
+        "source_course": "Computer Security",
+        "source_id": 28,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "85576275eb3e5008e1c40c3e7fec512ce6399e79c5798414355159423ee1f8cc"
       }
     ]
   },
   {
-    "id": "car-projection",
-    "title": "From 3D coordinates to a 2D view",
-    "category": "Software",
-    "summary": "A Toyota Corolla-inspired wireframe and transformation study.",
-    "did": "Represented a model with 16 vertices and an adjacency matrix, then used Python, NumPy and Matplotlib to explore rotations, scaling and perspective projection.",
-    "why": "Matrix transformations show how computer graphics translate geometric data into a view on a screen.",
-    "outcome": "Produced an illustrated report documenting five transformation cases and connecting the mathematical operations with the plotted results.",
+    "id": "security-setuid",
+    "title": "Investigating environment variables and Set-UID",
+    "category": "Cybersecurity",
+    "course": "CSIT 460",
+    "summary": "Controlled experiments on inherited environment settings and privileged programs.",
+    "did": "Changed shell environment variables and examined their inheritance through fork and exec. Investigated how PATH, dynamic loading and program invocation affect Set-UID behavior in the supplied lab environment.",
+    "why": "Environment settings can influence privileged execution. Understanding those boundaries supports safer choices when launching commands from programs.",
+    "outcome": "Produced a screenshot-supported report explaining the observed behavior of environment inheritance and Set-UID experiments.",
+    "tags": [
+      "Set-UID",
+      "Environment variables",
+      "fork",
+      "exec",
+      "CSIT 460"
+    ],
+    "note": "",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Environment_Variables_and_SetUID_Lab_Report_Duy_Hoang.pdf",
+        "path": "files/security-setuid/Environment_Variables_and_SetUID_Lab_Report_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 7309175,
+        "primary": true,
+        "label": "Environment Variables and SetUID Lab Report",
+        "role": "Project report",
+        "original_name": "Duy Hoang CSIT 460 Lab 1 Part 2.pdf",
+        "source_course": "Computer Security",
+        "source_id": 29,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "dd9b29ded4a5e663fd9b3d1e57983de2eb4c42bcc2ce73f9814da4fc0de04064"
+      }
+    ]
+  },
+  {
+    "id": "security-buffer-overflow",
+    "title": "Studying buffer overflows and memory protections",
+    "category": "Cybersecurity",
+    "course": "CSIT 460",
+    "summary": "Stack-layout reasoning and a controlled SEED buffer-overflow exercise.",
+    "did": "Analyzed stack layouts, discussed ASLR and other memory protections, and documented a buffer-overflow exercise with the supplied exploit script in the course lab environment.",
+    "why": "Relating unsafe memory copying to stack contents helps explain how overflow vulnerabilities arise and why memory protections matter.",
+    "outcome": "Produced a lab report and exploit source documenting the exercise, parameters and observed behavior.",
+    "tags": [
+      "Memory safety",
+      "ASLR",
+      "Stack layout",
+      "SEED lab",
+      "CSIT 460"
+    ],
+    "note": "",
+    "credit": "The exploit retains the supplied SEED lab shellcode and scaffold; the project is presented as course lab work.",
+    "resources": [
+      {
+        "name": "Buffer_Overflow_and_Memory_Protections_Report_Duy_Hoang.pdf",
+        "path": "files/security-buffer-overflow/Buffer_Overflow_and_Memory_Protections_Report_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 2576287,
+        "primary": true,
+        "label": "Buffer Overflow and Memory Protections Report",
+        "role": "Project report",
+        "original_name": "Duy Hoang Lab 2.pdf",
+        "source_course": "Computer Security",
+        "source_id": 32,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "2a07ea8f47ab8d923914f67edca2e7c62d89e4bfea8bcf5353d886e5b4ec5789"
+      },
+      {
+        "name": "SEED_Buffer_Overflow_Lab_Exploit_Duy_Hoang.py",
+        "path": "files/security-buffer-overflow/SEED_Buffer_Overflow_Lab_Exploit_Duy_Hoang.py",
+        "format": "PY",
+        "bytes": 2000,
+        "primary": true,
+        "label": "SEED Buffer Overflow Lab Exploit",
+        "role": "Source code",
+        "original_name": "exploit.py",
+        "source_course": "Computer Security",
+        "source_id": 33,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "0d26b11a3981fa3335b833c0afe22e079a4daffc2fe2eff917792564f0f45d56"
+      },
+      {
+        "name": "Buffer_Overflow_Assignment_Instructions.pdf",
+        "path": "files/security-buffer-overflow/Buffer_Overflow_Assignment_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 332691,
+        "primary": false,
+        "label": "Buffer Overflow Assignment Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Assignment2_Buffer_Overflow_Server_revised.pdf",
+        "source_course": "Computer Security",
+        "source_id": 26,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "6d23404072105fbacd3da3e6f15940b5d3844e150eba4be0436b42eb6750c80f"
+      }
+    ]
+  },
+  {
+    "id": "security-packets-firewalls",
+    "title": "Exploring packet spoofing and firewall rules",
+    "category": "Cybersecurity",
+    "course": "CSIT 460",
+    "summary": "Docker-based network experiments using packet tools and iptables.",
+    "did": "Configured the course container network, captured and generated packets, and tested stateless and stateful firewall rules. Documented connection tracking, traffic limits and load-balancing experiments.",
+    "why": "Packet-level observations show how network controls handle traffic and how rule placement and connection state affect communication.",
+    "outcome": "Produced a combined report with setup evidence, command and code explanations, rule behavior and screenshots of the network experiments.",
+    "tags": [
+      "Docker",
+      "Scapy",
+      "iptables",
+      "Connection tracking",
+      "CSIT 460"
+    ],
+    "note": "",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Packet_Sniffing_Spoofing_and_Firewall_Report_Duy_Hoang.pdf",
+        "path": "files/security-packets-firewalls/Packet_Sniffing_Spoofing_and_Firewall_Report_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 3997260,
+        "primary": true,
+        "label": "Packet Sniffing Spoofing and Firewall Report",
+        "role": "Project report",
+        "original_name": "Duy Hoang CSIT 460 Lab 3.pdf",
+        "source_course": "Computer Security",
+        "source_id": 30,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "9d87268fbebfb6c3e9a38da54aab928563f7f4aa261dec7c12debb8ae01c2350"
+      },
+      {
+        "name": "Packet_Spoofing_and_Firewall_Lab_Instructions.pdf",
+        "path": "files/security-packets-firewalls/Packet_Spoofing_and_Firewall_Lab_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 938731,
+        "primary": false,
+        "label": "Packet Spoofing and Firewall Lab Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Lab3_SpoofingAndFirewalls.pdf",
+        "source_course": "Computer Security",
+        "source_id": 34,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "49bf711c653c07679338b608316d219eb43d80ab367e2836af327bef7cdd8541"
+      }
+    ]
+  },
+  {
+    "id": "security-web-attacks",
+    "title": "Examining SQL injection and CSRF",
+    "category": "Cybersecurity",
+    "course": "CSIT 460",
+    "summary": "Course web-security experiments and explanations of the associated defenses.",
+    "did": "Completed the supplied SQL-injection and cross-site request forgery exercises, documented attack behavior in the lab applications, and explained how prepared statements separate query code from input data.",
+    "why": "These exercises connect application behavior to trust boundaries around database input and authenticated browser requests.",
+    "outcome": "Produced a report with lab observations, relevant snippets and explanations of SQL-injection and CSRF mechanisms.",
+    "tags": [
+      "SQL injection",
+      "CSRF",
+      "Prepared statements",
+      "CSIT 460"
+    ],
+    "note": "",
+    "credit": "",
+    "resources": [
+      {
+        "name": "SQL_Injection_and_CSRF_Lab_Report_Duy_Hoang.pdf",
+        "path": "files/security-web-attacks/SQL_Injection_and_CSRF_Lab_Report_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 7899545,
+        "primary": true,
+        "label": "SQL Injection and CSRF Lab Report",
+        "role": "Project report",
+        "original_name": "Duy Hoang CSIT 460 Lab 4.pdf",
+        "source_course": "Computer Security",
+        "source_id": 31,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "58f96e31d1019749245d547928f5b5de9ede609428011fda459188a0bbef42fa"
+      },
+      {
+        "name": "SQL_Injection_and_CSRF_Lab_Instructions.pdf",
+        "path": "files/security-web-attacks/SQL_Injection_and_CSRF_Lab_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 1543389,
+        "primary": false,
+        "label": "SQL Injection and CSRF Lab Instructions",
+        "role": "Assignment instructions",
+        "original_name": "CSRF+SQL Injection Lab.pdf",
+        "source_course": "Computer Security",
+        "source_id": 27,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "89069fe1ef705de4495cdd6257e18fb127b5831309aa4169d63add860810bc2a"
+      }
+    ]
+  },
+  {
+    "id": "statistics-critical-literacy",
+    "title": "Questioning statistical claims in articles",
+    "category": "Data",
+    "course": "STAT 230",
+    "summary": "Written analysis of data sources, context, bias and interpretation.",
+    "did": "Applied a critical statistical literacy framework to education reporting, examining how figures were gathered, what context was omitted, and how different perspectives could change an interpretation.",
+    "why": "Evaluating the evidence behind a statistic helps avoid turning an incomplete or selectively framed number into an unsupported conclusion.",
+    "outcome": "Produced a written response that poses questions about sampling, source incentives, confounding factors and comparisons between perspectives.",
+    "tags": [
+      "Statistical literacy",
+      "Source evaluation",
+      "Bias",
+      "STAT 230"
+    ],
+    "note": "",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Critical_Statistical_Literacy_Article_Analysis_Duy_Hoang.docx",
+        "path": "files/statistics-critical-literacy/Critical_Statistical_Literacy_Article_Analysis_Duy_Hoang.docx",
+        "format": "DOCX",
+        "bytes": 979627,
+        "primary": true,
+        "label": "Critical Statistical Literacy Article Analysis",
+        "role": "Project report",
+        "original_name": "Stat 230 Project 1.docx",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 47,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "f95b182bd51d0bb66fcc096a5eabd9268df51f04855a52d403f46b4354f1ad9b"
+      },
+      {
+        "name": "Critical_Statistical_Literacy_Assignment_Brief.pdf",
+        "path": "files/statistics-critical-literacy/Critical_Statistical_Literacy_Assignment_Brief.pdf",
+        "format": "PDF",
+        "bytes": 79241,
+        "primary": false,
+        "label": "Critical Statistical Literacy Assignment Brief",
+        "role": "Assignment instructions",
+        "original_name": "Project I - CSLHM.pdf",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 40,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "a61be191030ef38298411c8a171d212ca13402cdf89eb1a9f4fed3b62df95459"
+      }
+    ]
+  },
+  {
+    "id": "statistics-data-summaries",
+    "title": "Describing data with graphs and summary statistics",
+    "category": "Data",
+    "course": "STAT 230",
+    "summary": "Histograms, boxplots and descriptive comparisons across supplied datasets.",
+    "did": "Used histograms, boxplots and summary statistics to describe revenue, cholesterol and IQ datasets. Compared medians, variability and group distributions, and discussed possible influences on the observed patterns.",
+    "why": "The shape of a distribution affects which summary measures are informative. Graphs also expose spread and group differences that a single average can hide.",
+    "outcome": "Produced a report with graphical summaries and interpretation of center, spread and associations in the assignment datasets.",
+    "tags": [
+      "StatCrunch",
+      "Histograms",
+      "Boxplots",
+      "Descriptive statistics",
+      "STAT 230"
+    ],
+    "note": "The comparisons use course datasets and describe associations rather than demonstrating causal effects.",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Graphical_and_Numerical_Data_Summaries_Report_Duy_Hoang.docx",
+        "path": "files/statistics-data-summaries/Graphical_and_Numerical_Data_Summaries_Report_Duy_Hoang.docx",
+        "format": "DOCX",
+        "bytes": 224764,
+        "primary": true,
+        "label": "Graphical and Numerical Data Summaries Report",
+        "role": "Project report",
+        "original_name": "Stat 230 Project 2.docx",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 48,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "ddd10fc0cb6be431854a1465c1dc7d7cc84926377a8a23b38ac9ad58c0c2ed7a"
+      },
+      {
+        "name": "Data_Summaries_Assignment_Instructions.pdf",
+        "path": "files/statistics-data-summaries/Data_Summaries_Assignment_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 122304,
+        "primary": false,
+        "label": "Data Summaries Assignment Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Project II.pdf",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 41,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "295e78a4901767cf4dab7f5a1c0754f3ddbd0406faa63d32082059fa69908376"
+      }
+    ]
+  },
+  {
+    "id": "statistics-regression",
+    "title": "Interpreting regression and residual patterns",
+    "category": "Data",
+    "course": "STAT 230",
+    "summary": "Linear relationships in Manhattan geometry and Broadway business data.",
+    "did": "Examined a least-squares model for Broadway street geometry, compared business-variable scatterplots, and interpreted residual patterns and R² values for profit and ticket-sales relationships.",
+    "why": "A visible trend does not guarantee useful prediction. Residual patterns and explained variance help assess what a fitted model captures.",
+    "outcome": "Produced a regression report and supplied data workbook. The business comparisons reported R² values of 0.1253 and 0.0548, illustrating the limited predictive value of the examined single-variable models.",
+    "tags": [
+      "Regression",
+      "R²",
+      "Residuals",
+      "Excel",
+      "STAT 230"
+    ],
+    "note": "",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Broadway_Regression_and_Model_Interpretation_Report_Duy_Hoang.docx",
+        "path": "files/statistics-regression/Broadway_Regression_and_Model_Interpretation_Report_Duy_Hoang.docx",
+        "format": "DOCX",
+        "bytes": 79200,
+        "primary": true,
+        "label": "Broadway Regression and Model Interpretation Report",
+        "role": "Project report",
+        "original_name": "Stat 230 Project 3.docx",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 49,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "defd791c54ed2beb76c340279fd5ea4044e66f5153f7c485bcbd256620e61b4e"
+      },
+      {
+        "name": "Broadway_Business_Regression_Dataset.xlsx",
+        "path": "files/statistics-regression/Broadway_Business_Regression_Dataset.xlsx",
+        "format": "XLSX",
+        "bytes": 8373,
+        "primary": false,
+        "label": "Broadway Business Regression Dataset",
+        "role": "Supplied dataset",
+        "original_name": "Broadway Data.xlsx",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 35,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "ae42203d3d923bf43bbca5a0564d980b1c629fe1f68c7f457ee97c29b7e1e28c"
+      },
+      {
+        "name": "Broadway_Regression_Assignment_Instructions.pdf",
+        "path": "files/statistics-regression/Broadway_Regression_Assignment_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 1306001,
+        "primary": false,
+        "label": "Broadway Regression Assignment Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Project 3.pdf",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 39,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "b176365918889863bc006c861b3bffd3c41fff9a3d33def520efe98c2c8e46d1"
+      }
+    ]
+  },
+  {
+    "id": "statistics-probability",
+    "title": "Working with conditional probability and Bayes’ theorem",
+    "category": "Data",
+    "course": "STAT 230",
+    "summary": "Worked probability calculations using dice and a hypothetical screening example.",
+    "did": "Counted outcomes for increasing dice sequences, calculated a conditional dice probability, and applied Bayes’ theorem to the assignment’s hypothetical test data.",
+    "why": "Conditional probability distinguishes the likelihood of an outcome under a condition from the likelihood of the condition after observing the outcome.",
+    "outcome": "Produced worked solutions, including 5/54 for an increasing three-dice sequence and 1/3 for the conditional dice event, with calculations shown for the Bayes example.",
+    "tags": [
+      "Probability",
+      "Conditional probability",
+      "Bayes’ theorem",
+      "STAT 230"
+    ],
+    "note": "",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Conditional_Probability_and_Bayes_Theorem_Solutions_Duy_Hoang.docx",
+        "path": "files/statistics-probability/Conditional_Probability_and_Bayes_Theorem_Solutions_Duy_Hoang.docx",
+        "format": "DOCX",
+        "bytes": 9087,
+        "primary": true,
+        "label": "Conditional Probability and Bayes Theorem Solutions",
+        "role": "Project report",
+        "original_name": "Stats 230 Project 4.docx",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 50,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "0207ddb5ea7d1bec2b86a95edb334844d1e12387621010eb33a82e9f6e8e8262"
+      },
+      {
+        "name": "Probability_and_Bayes_Assignment_Instructions.pdf",
+        "path": "files/statistics-probability/Probability_and_Bayes_Assignment_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 88892,
+        "primary": false,
+        "label": "Probability and Bayes Assignment Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Project IV.pdf",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 42,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "e716136956d3ea340b51a599732e24f29b8550df24954fb0cac353dc27b17099"
+      }
+    ]
+  },
+  {
+    "id": "statistics-zscores",
+    "title": "Using z-scores to compare observations",
+    "category": "Data",
+    "course": "STAT 230",
+    "summary": "Standardized observations and the empirical rule in supplied lifestyle data.",
+    "did": "Explained the empirical rule, calculated z-scores for selected observations, and compared heart rate, height, social-media use, study hours and exercise hours against the supplied distributions.",
+    "why": "Standardizing values makes observations measured on different scales easier to compare and highlights values far from their distribution’s mean.",
+    "outcome": "Produced a report with observation and z-score tables. The selected study-hours example was identified as exceeding three standard deviations from its comparison mean.",
+    "tags": [
+      "Z-scores",
+      "Empirical rule",
+      "Standardization",
+      "STAT 230"
+    ],
+    "note": "",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Empirical_Rule_and_ZScore_Analysis_Report_Duy_Hoang.docx",
+        "path": "files/statistics-zscores/Empirical_Rule_and_ZScore_Analysis_Report_Duy_Hoang.docx",
+        "format": "DOCX",
+        "bytes": 31254,
+        "primary": true,
+        "label": "Empirical Rule and ZScore Analysis Report",
+        "role": "Project report",
+        "original_name": "Stats 230 Project 5.docx",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 51,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "6045f2f1e47b484cbd09f09a7cff387eda02f60faf3c8407d5eb972f30df7e88"
+      },
+      {
+        "name": "Empirical_Rule_Comparison_Dataset.xlsx",
+        "path": "files/statistics-zscores/Empirical_Rule_Comparison_Dataset.xlsx",
+        "format": "XLSX",
+        "bytes": 10588,
+        "primary": false,
+        "label": "Empirical Rule Comparison Dataset",
+        "role": "Supplied dataset",
+        "original_name": "Project V Data.xlsx",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 44,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "6f975baa750ef0502ae14c307c820d5f76b1b46d6d44822d46bb822f78d7d4dc"
+      },
+      {
+        "name": "Empirical_Rule_and_ZScore_Assignment_Instructions.pdf",
+        "path": "files/statistics-zscores/Empirical_Rule_and_ZScore_Assignment_Instructions.pdf",
+        "format": "PDF",
+        "bytes": 142884,
+        "primary": false,
+        "label": "Empirical Rule and ZScore Assignment Instructions",
+        "role": "Assignment instructions",
+        "original_name": "Project V - Empirical Rule and Z-scores.pdf",
+        "source_course": "DATA SCIENCE AND STATISTICS",
+        "source_id": 43,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "415ba8a7f076569390cbfb00231b24f7aa96f8c9ccc7a6cbde3a6a86b0a3a7e2"
+      }
+    ]
+  },
+  {
+    "id": "database-enrollment-app",
+    "title": "Building a SQLite course enrollment application",
+    "category": "Data",
+    "course": "CSIT 355",
+    "summary": "Relational design and a Python command-line application for student enrollment.",
+    "did": "Defined student, course and enrollment tables and implemented a Python menu for listing and searching courses, enrolling and withdrawing students, viewing classes and deleting student records. Used SQLite queries and a composite enrollment key.",
+    "why": "A relational schema connects records through explicit keys, while parameterized queries and structured menu operations make data access clearer and easier to maintain.",
+    "outcome": "Produced a schema document, application source and SQLite database illustrating the enrollment workflow and relationships between students and courses.",
     "tags": [
       "Python",
+      "SQLite",
+      "Relational design",
+      "Parameterized queries",
+      "CSIT 355"
+    ],
+    "note": "",
+    "credit": "The schema report credits Duy Hoang and Leighanna Navales. Original collaborator attribution is preserved.",
+    "resources": [
+      {
+        "name": "University_Enrollment_Relational_Schema_Duy_Hoang.pdf",
+        "path": "files/database-enrollment-app/University_Enrollment_Relational_Schema_Duy_Hoang.pdf",
+        "format": "PDF",
+        "bytes": 45964,
+        "primary": true,
+        "label": "University Enrollment Relational Schema",
+        "role": "Project report",
+        "original_name": "Duy Leigh CSIT 355 Final Project.pdf",
+        "source_course": "Database Systems",
+        "source_id": 53,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "0b3b59c536b51dbe0a3a54bc0b5fc6fb91075f30077e33ee92469dfe8fb2e13a"
+      },
+      {
+        "name": "University_Enrollment_Application_Duy_Hoang.py",
+        "path": "files/database-enrollment-app/University_Enrollment_Application_Duy_Hoang.py",
+        "format": "PY",
+        "bytes": 9600,
+        "primary": true,
+        "label": "University Enrollment Application",
+        "role": "Source code",
+        "original_name": "final project.py",
+        "source_course": "Database Systems",
+        "source_id": 54,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "rename_adjustment": "Updated database filename and resolved it beside the renamed application",
+        "sha256": "45911d9ae322c082d296fe6854925498df301a7eac39cde80b270a4d1e39a2b5"
+      },
+      {
+        "name": "University_Enrollment_Database_Duy_Hoang.db",
+        "path": "files/database-enrollment-app/University_Enrollment_Database_Duy_Hoang.db",
+        "format": "DB",
+        "bytes": 20480,
+        "primary": false,
+        "label": "University Enrollment Database",
+        "role": "Database",
+        "original_name": "college.db",
+        "source_course": "Database Systems",
+        "source_id": 52,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "5d138bf473d99300b626429745891be1e4045eea71f33128cd3348137332c91f"
+      }
+    ]
+  },
+  {
+    "id": "linear-algebra-car-projections",
+    "title": "Projecting a 3D car model with matrices",
+    "category": "Software",
+    "course": "AMAT 240",
+    "summary": "Toyota Corolla wireframe projections using homogeneous coordinates and Python.",
+    "did": "Represented the car wireframe with homogeneous coordinates, applied projection, rotation and scaling matrices, and plotted the resulting views with NumPy and Matplotlib.",
+    "why": "Matrix operations provide a compact way to connect geometric transformations with computer-generated views of a three-dimensional model.",
+    "outcome": "Produced an illustrated report and plotting source for five transformation cases, connecting the mathematical operations with their visual results.",
+    "tags": [
+      "Linear algebra",
       "NumPy",
-      "Computer graphics"
+      "Matplotlib",
+      "3D transformations",
+      "AMAT 240"
     ],
     "note": "",
     "credit": "",
     "resources": [
       {
         "name": "Toyota_Corolla_3D_Transformations_Report_Duy_Hoang.pdf",
-        "path": "files/car-projection/Toyota_Corolla_3D_Transformations_Report_Duy_Hoang.pdf",
+        "path": "files/linear-algebra-car-projections/Toyota_Corolla_3D_Transformations_Report_Duy_Hoang.pdf",
         "format": "PDF",
         "bytes": 414074,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
+        "label": "Toyota Corolla 3D Transformations Report",
+        "role": "Project report",
         "original_name": "New Project Toyota Corolla Report Final.pdf",
-        "original_path": "files/car-projection/488-New-Project-Toyota-Corolla-Report-Final.pdf",
-        "label": "Toyota Corolla 3D Transformations Report"
-      }
-    ]
-  },
-  {
-    "id": "kernel-timer",
-    "title": "Inside a Linux kernel module",
-    "category": "Software",
-    "summary": "A C timer module with a counter and a /proc interface.",
-    "did": "Developed coursework in C using kernel timers, jiffies, logging and a /proc interface to expose a counter.",
-    "why": "Kernel modules illustrate how low-level code interacts with the operating system beyond a normal user-space program.",
-    "outcome": "Produced source files and a report documenting the timer and counter behavior as an educational systems project.",
-    "tags": [
-      "C",
-      "Linux",
-      "Kernel modules"
-    ],
-    "note": "Educational source code; not a production driver. The portfolio does not execute kernel modules in the browser.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Linux_Kernel_Timer_Module_Duy_Hoang.c",
-        "path": "files/kernel-timer/Linux_Kernel_Timer_Module_Duy_Hoang.c",
-        "format": "C",
-        "bytes": 2065,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
-        "original_name": "hw1 (6).c",
-        "original_path": "files/kernel-timer/296-hw1-6.c",
-        "label": "Linux Kernel Timer Module"
+        "source_course": "Linear Algebra",
+        "source_id": 55,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "4ae685bc62b7f5d4eb37ec05845fc144b5674429e31e6f717a3f660f201f6b0e"
       },
       {
-        "name": "Linux_Kernel_Timer_Lab_Report_Duy_Hoang.docx",
-        "path": "files/kernel-timer/Linux_Kernel_Timer_Lab_Report_Duy_Hoang.docx",
-        "format": "DOCX",
-        "bytes": 924793,
+        "name": "Toyota_Corolla_Matrix_Projection_Plots_Duy_Hoang.py",
+        "path": "files/linear-algebra-car-projections/Toyota_Corolla_Matrix_Projection_Plots_Duy_Hoang.py",
+        "format": "PY",
+        "bytes": 5981,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang CSIT Assignment 1.docx",
-        "original_path": "files/kernel-timer/205-Duy-Hoang-CSIT-Assignment-1.docx",
-        "label": "Linux Kernel Timer Lab Report"
+        "label": "Toyota Corolla Matrix Projection Plots",
+        "role": "Source code",
+        "original_name": "Project2-1.py",
+        "source_course": "Linear Algebra",
+        "source_id": 56,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "6e3e173c5898e30c8051e1642cdedb1267fd9fa48417921a9e154ebac4336ee5"
       }
     ]
   },
   {
-    "id": "thread-synchronization",
-    "title": "Coordinating five concurrent threads",
+    "id": "os-signal-timers",
+    "title": "Handling periodic signals in C",
     "category": "Software",
-    "summary": "A POSIX threads exercise in shared-resource coordination.",
-    "did": "Used mutexes, condition variables and state tracking to coordinate five threads and compare synchronized behavior with an unsynchronized approach.",
-    "why": "Concurrency requires explicit coordination when multiple tasks compete for shared resources.",
-    "outcome": "Produced a named report documenting the synchronization strategy and observed behavior of the concurrent-thread exercise.",
+    "course": "CSIT 345",
+    "summary": "SIGALRM, signal handlers and a repeating interval timer.",
+    "did": "Configured sigaction and setitimer to deliver SIGALRM every 250 milliseconds, and used a volatile sig_atomic_t counter to record timer interrupts.",
+    "why": "Signal handling exposes how a process responds to asynchronous events and why shared state in a handler needs careful treatment.",
+    "outcome": "Produced commented C source and a short lab write-up describing the timer configuration and interrupt counter.",
     "tags": [
       "C",
-      "POSIX threads",
-      "Concurrency"
-    ],
-    "note": "Coursework demonstration; no formal guarantee of freedom from deadlock or starvation is asserted.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Thread_Synchronization_and_Dining_Philosophers_Report_Duy_Hoang.pdf",
-        "path": "files/thread-synchronization/Thread_Synchronization_and_Dining_Philosophers_Report_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 129851,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang Assignment 5.pdf",
-        "original_path": "files/thread-synchronization/193-Duy-Hoang-Assignment-5.pdf",
-        "label": "Thread Synchronization and Dining Philosophers Report"
-      }
-    ]
-  },
-  {
-    "id": "systems-labs",
-    "title": "Signals, timers and module lifecycle",
-    "category": "Software",
-    "summary": "Foundational Linux programming labs.",
-    "did": "Worked with SIGALRM, sigaction and setitimer in a user-space timer exercise, and wrote a simple loadable module with initialization and exit functions.",
-    "why": "These exercises connect event handling and program lifecycle to concrete operating-system interfaces.",
-    "outcome": "Created commented C source and a lab write-up describing timer interrupts and module loading and unloading.",
-    "tags": [
-      "C",
+      "SIGALRM",
+      "setitimer",
       "Signals",
-      "Linux"
+      "CSIT 345"
     ],
     "note": "",
     "credit": "",
     "resources": [
       {
-        "name": "Linux_Signal_Timers_Lab_Report_Duy_Hoang.docx",
-        "path": "files/systems-labs/Linux_Signal_Timers_Lab_Report_Duy_Hoang.docx",
+        "name": "Periodic_Signal_Timer_Lab_Writeup_Duy_Hoang.docx",
+        "path": "files/os-signal-timers/Periodic_Signal_Timer_Lab_Writeup_Duy_Hoang.docx",
         "format": "DOCX",
         "bytes": 6900,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
+        "label": "Periodic Signal Timer Lab Writeup",
+        "role": "Project report",
         "original_name": "CSIT 345 Lab1 (1).docx",
-        "original_path": "files/systems-labs/145-CSIT-345-Lab1-1.docx",
-        "label": "Linux Signal Timers Lab Report"
+        "source_course": "Operating Systems",
+        "source_id": 58,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "8e88b0d7c587e6a47c56d59a9d78f1eee3ce60f1699b376424e44a3899416079"
       },
       {
-        "name": "Linux_Kernel_Module_Lifecycle_Duy_Hoang.c",
-        "path": "files/systems-labs/Linux_Kernel_Module_Lifecycle_Duy_Hoang.c",
+        "name": "Periodic_SIGALRM_Timer_Duy_Hoang.c",
+        "path": "files/os-signal-timers/Periodic_SIGALRM_Timer_Duy_Hoang.c",
+        "format": "C",
+        "bytes": 2462,
+        "primary": true,
+        "label": "Periodic SIGALRM Timer",
+        "role": "Source code",
+        "original_name": "lab1.c",
+        "source_course": "Operating Systems",
+        "source_id": 61,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "4125a1300ef5ca6799d22591431f04099f268dd4048ff950085fdf7db2932499"
+      }
+    ]
+  },
+  {
+    "id": "os-kernel-lifecycle",
+    "title": "Loading and unloading a Linux kernel module",
+    "category": "Software",
+    "course": "CSIT 345",
+    "summary": "A minimal kernel module with initialization and cleanup logging.",
+    "did": "Wrote initialization and exit functions, registered them with module_init and module_exit, and included module metadata and a kernel build Makefile.",
+    "why": "A small module demonstrates the lifecycle hooks and build structure used when code runs inside the Linux kernel.",
+    "outcome": "Produced the module source and build file for inspecting the load and unload behavior in a matching Linux kernel environment.",
+    "tags": [
+      "Linux kernel",
+      "C",
+      "Makefile",
+      "CSIT 345"
+    ],
+    "note": "",
+    "credit": "",
+    "resources": [
+      {
+        "name": "Linux_Module_Lifecycle_Duy_Hoang.c",
+        "path": "files/os-kernel-lifecycle/Linux_Module_Lifecycle_Duy_Hoang.c",
         "format": "C",
         "bytes": 385,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
-        "original_name": "lab2 (1).c",
-        "original_path": "files/systems-labs/410-lab2-1.c",
-        "label": "Linux Kernel Module Lifecycle"
+        "label": "Linux Module Lifecycle",
+        "role": "Source code",
+        "original_name": "lab2.c",
+        "source_course": "Operating Systems",
+        "source_id": 63,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "d5e1d1b59c99776b3374ce3ec63faa7b0ff00c340f4dbcbd294318082f812477"
+      },
+      {
+        "name": "Linux_Module_Build_Duy_Hoang",
+        "path": "files/os-kernel-lifecycle/Linux_Module_Build_Duy_Hoang",
+        "format": "MAKEFILE",
+        "bytes": 200,
+        "primary": false,
+        "label": "Linux Module Build",
+        "role": "Build file",
+        "original_name": "Makefile",
+        "source_course": "Operating Systems",
+        "source_id": 64,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "rename_adjustment": "Updated module target to match the renamed C source; use make -f Linux_Module_Build_Duy_Hoang",
+        "sha256": "c3dbb95ada4fda24eaa7d7cb7992b4db7d5168394af16fbce6326ca51c680a6b"
       }
     ]
   },
   {
-    "id": "ruby-study",
-    "title": "A closer look at Ruby",
+    "id": "os-message-queues",
+    "title": "Exchanging messages through a POSIX queue",
     "category": "Software",
-    "summary": "A programming-language study with a report and presentations.",
-    "did": "Researched Ruby’s language design, object model and dynamic behavior; assembled code examples, a written analysis and presentation materials.",
-    "why": "Comparing language features helps explain how design choices affect readability and the way programs are written.",
-    "outcome": "Produced a report and slide materials that communicate the language’s features and tradeoffs.",
+    "course": "CSIT 345",
+    "summary": "Separate sender and receiver programs for interprocess communication.",
+    "did": "Completed C sender and receiver programs that open a named POSIX message queue, exchange messages, handle a termination message and close queue resources.",
+    "why": "Message queues let separate processes coordinate through an operating-system-managed communication channel with explicit limits on message size and queue capacity.",
+    "outcome": "Produced two commented source files documenting the send, receive and cleanup paths.",
     "tags": [
-      "Ruby",
-      "Language design",
-      "Technical communication"
+      "C",
+      "POSIX",
+      "Message queues",
+      "IPC",
+      "CSIT 345"
     ],
-    "note": "A language research project, not a deployed Ruby or Rails application.",
-    "credit": "",
+    "note": "",
+    "credit": "The source preserves the course skeleton comments. The submitted archive’s standalone screenshot is excluded from the portfolio.",
     "resources": [
       {
-        "name": "Ruby_Programming_Language_Report_Duy_Hoang.pdf",
-        "path": "files/ruby-study/Ruby_Programming_Language_Report_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 381334,
+        "name": "POSIX_Message_Queue_Receiver_Duy_Hoang.c",
+        "path": "files/os-message-queues/POSIX_Message_Queue_Receiver_Duy_Hoang.c",
+        "format": "C",
+        "bytes": 1698,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang Project Report Ruby.pdf",
-        "original_path": "files/ruby-study/218-Duy-Hoang-Project-Report-Ruby.pdf",
-        "label": "Ruby Programming Language Report"
+        "label": "POSIX Message Queue Receiver",
+        "role": "Source code",
+        "original_name": "rec_skeleton (1).c",
+        "source_course": "Operating Systems",
+        "source_id": 59,
+        "authorship_basis": "Source extracted from the user-supplied named homework archive",
+        "sha256": "075e4965d73889c55865b74e8fe348fe485f50edb4bba386764c916d392a9542"
       },
       {
-        "name": "Ruby_Programming_Language_Project_Proposal_Duy_Hoang.docx",
-        "path": "files/ruby-study/Ruby_Programming_Language_Project_Proposal_Duy_Hoang.docx",
-        "format": "DOCX",
-        "bytes": 7434,
-        "primary": false,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang CSIT 313 Project Summary.docx",
-        "original_path": "files/ruby-study/196-Duy-Hoang-CSIT-313-Project-Summary.docx",
-        "label": "Ruby Programming Language Project Proposal"
-      },
-      {
-        "name": "Ruby_Programming_Language_Presentation_Duy_Hoang.pptx",
-        "path": "files/ruby-study/Ruby_Programming_Language_Presentation_Duy_Hoang.pptx",
-        "format": "PPTX",
-        "bytes": 95772,
-        "primary": false,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
-        "original_name": "Ruby_Upgraded_Professor_Impressing.pptx",
-        "original_path": "files/ruby-study/571-Ruby_Upgraded_Professor_Impressing.pptx",
-        "label": "Ruby Programming Language Presentation"
+        "name": "POSIX_Message_Queue_Sender_Duy_Hoang.c",
+        "path": "files/os-message-queues/POSIX_Message_Queue_Sender_Duy_Hoang.c",
+        "format": "C",
+        "bytes": 1044,
+        "primary": true,
+        "label": "POSIX Message Queue Sender",
+        "role": "Source code",
+        "original_name": "send_skeleton (2).c",
+        "source_course": "Operating Systems",
+        "source_id": 59,
+        "authorship_basis": "Source extracted from the user-supplied named homework archive",
+        "sha256": "0bd22ddbc46936e9a183d70ca39794019b24610d5322a62f923ca20181196807"
       }
     ]
   },
   {
-    "id": "programming-paradigms",
-    "title": "Solving problems across languages",
+    "id": "os-thread-synchronization",
+    "title": "Coordinating producers, consumers, readers and writers",
     "category": "Software",
-    "summary": "Named assignments and written reflections on programming languages.",
-    "did": "Completed written assignments on programming-language concepts, with exercises and reflections covering imperative, functional and logic-programming approaches.",
-    "why": "Expressing problems in different languages exposes differences in control flow, data representation and reasoning.",
-    "outcome": "Produced worked assignments and reflections on Java, Racket and Prolog that explain the reasoning behind the coursework.",
+    "course": "CSIT 345",
+    "summary": "Semaphore-based thread coordination with recorded terminal output.",
+    "did": "Implemented a bounded-buffer producer/consumer exercise with empty, full and mutex semaphores, and a readers/writers exercise with shared counters and semaphore-protected access.",
+    "why": "Coordinating access to shared state helps prevent races and enforces ordering between threads that otherwise run independently.",
+    "outcome": "Produced two C programs and a PDF of lab output showing the producer/consumer and readers/writers exercises.",
     "tags": [
-      "Programming languages",
-      "Racket",
-      "Prolog",
-      "Written analysis"
+      "pthreads",
+      "Semaphores",
+      "Bounded buffer",
+      "Readers/writers",
+      "CSIT 345"
     ],
     "note": "",
     "credit": "",
     "resources": [
       {
-        "name": "Formal_Grammars_and_Weakest_Preconditions_Duy_Hoang.pdf",
-        "path": "files/programming-paradigms/Formal_Grammars_and_Weakest_Preconditions_Duy_Hoang.pdf",
+        "name": "Thread_Synchronization_Lab_Output_Duy_Hoang.pdf",
+        "path": "files/os-thread-synchronization/Thread_Synchronization_Lab_Output_Duy_Hoang.pdf",
         "format": "PDF",
-        "bytes": 8202859,
+        "bytes": 160381,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "handwritten contents, visually verified; page 1",
-        "original_name": "CSIT313HW2Hoang.pdf",
-        "original_path": "files/programming-paradigms/172-CSIT313HW2Hoang.pdf",
-        "label": "Formal Grammars and Weakest Preconditions"
+        "label": "Thread Synchronization Lab Output",
+        "role": "Project report",
+        "original_name": "Duy Hoang Lab 5.pdf",
+        "source_course": "Operating Systems",
+        "source_id": 60,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "5a1d541136be081f1783714d6bb8ce6e122f9f1499b7968fba1ed68e6d589804"
       },
       {
-        "name": "Programming_Language_Semantics_Assignment_Duy_Hoang.pdf",
-        "path": "files/programming-paradigms/Programming_Language_Semantics_Assignment_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 145136,
+        "name": "Bounded_Buffer_Producer_Consumer_Duy_Hoang.c",
+        "path": "files/os-thread-synchronization/Bounded_Buffer_Producer_Consumer_Duy_Hoang.c",
+        "format": "C",
+        "bytes": 1448,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang CSIT313 HW3.pdf",
-        "original_path": "files/programming-paradigms/207-Duy-Hoang-CSIT313-HW3.pdf",
-        "label": "Programming Language Semantics Assignment"
+        "label": "Bounded Buffer Producer Consumer",
+        "role": "Source code",
+        "original_name": "bbp.c",
+        "source_course": "Operating Systems",
+        "source_id": 57,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "ec5ef68bc9b40b1dd313f58dc123ca1e4d2e86d3d48b66f40bbad33795ce5774"
       },
       {
-        "name": "Java_and_Software_Development_Reflection_Duy_Hoang.docx",
-        "path": "files/programming-paradigms/Java_and_Software_Development_Reflection_Duy_Hoang.docx",
-        "format": "DOCX",
-        "bytes": 9129,
+        "name": "Readers_Writers_Semaphore_Synchronization_Duy_Hoang.c",
+        "path": "files/os-thread-synchronization/Readers_Writers_Semaphore_Synchronization_Duy_Hoang.c",
+        "format": "C",
+        "bytes": 1417,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang CSIT313 Task1.docx",
-        "original_path": "files/programming-paradigms/209-Duy-Hoang-CSIT313-Task1.docx",
-        "label": "Java and Software Development Reflection"
-      },
-      {
-        "name": "Java_Control_Flow_and_Short_Circuit_Evaluation_Duy_Hoang.pdf",
-        "path": "files/programming-paradigms/Java_Control_Flow_and_Short_Circuit_Evaluation_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 53485,
-        "primary": false,
-        "name_match": "Duy  Hoang",
-        "name_match_location": "contents",
-        "original_name": "HoangTask5Answers.pdf",
-        "original_path": "files/programming-paradigms/282-HoangTask5Answers.pdf",
-        "label": "Java Control Flow and Short Circuit Evaluation"
-      },
-      {
-        "name": "Racket_Functional_Programming_Reflection_Duy_Hoang.txt",
-        "path": "files/programming-paradigms/Racket_Functional_Programming_Reflection_Duy_Hoang.txt",
-        "format": "TXT",
-        "bytes": 1308,
-        "primary": false,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
-        "original_name": "Task4Hoang.txt",
-        "original_path": "files/programming-paradigms/774-Task4Hoang.txt",
-        "label": "Racket Functional Programming Reflection"
-      },
-      {
-        "name": "Prolog_Logic_Programming_Reflection_Duy_Hoang.pdf",
-        "path": "files/programming-paradigms/Prolog_Logic_Programming_Reflection_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 28737,
-        "primary": false,
-        "name_match": "Duy  Hoang",
-        "name_match_location": "contents",
-        "original_name": "Task6Hoang.pdf",
-        "original_path": "files/programming-paradigms/777-Task6Hoang.pdf",
-        "label": "Prolog Logic Programming Reflection"
+        "label": "Readers Writers Semaphore Synchronization",
+        "role": "Source code",
+        "original_name": "rwp.c",
+        "source_course": "Operating Systems",
+        "source_id": 66,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "b96cfd5ed4ce90b1e34b4ba4556528202481008a031fdcf6bfb638df13b224c3"
       }
     ]
   },
   {
-    "id": "algorithm-analysis",
-    "title": "Choosing an algorithm deliberately",
+    "id": "os-xv6-scheduling",
+    "title": "Exploring process scheduling in xv6",
     "category": "Software",
-    "summary": "A written comparison of insertion sort and merge sort.",
-    "did": "Compared insertion sort and merge sort across input arrangements and discussed their time complexity.",
-    "why": "Algorithm selection depends on input size, ordering and the costs of the operations a program performs.",
-    "outcome": "Produced named written comparisons connecting theoretical complexity to expected performance trends.",
+    "course": "CSIT 345",
+    "summary": "An annotated process-management file with a shortest-burst scheduling exercise.",
+    "did": "Worked with the xv6 process-management source, added scheduling-related state and a pseudo-random burst-time helper, and changed the scheduler’s selection logic to choose a runnable process with the shortest burst time.",
+    "why": "Changing scheduler selection exposes the relationship between process state, locking and the policy used to choose the next runnable process.",
+    "outcome": "Produced an annotated proc.c implementation showing the scheduling changes within the surrounding xv6 process code.",
     "tags": [
-      "Sorting",
-      "Complexity",
-      "Written analysis"
+      "xv6",
+      "C",
+      "Scheduling",
+      "Process management",
+      "CSIT 345"
     ],
-    "note": "The portfolio presents written analysis; it does not claim independently reproduced benchmark improvements.",
-    "credit": "",
+    "note": "This is an implementation exercise supplied as one source file. The full xv6 tree, required headers and benchmark results were not supplied, so it is not presented as a standalone runnable system.",
+    "credit": "The file retains the original xv6 framework code and comments; the project represents modifications within that framework.",
     "resources": [
       {
-        "name": "Sorting_Algorithms_and_Complexity_Analysis_Duy_Hoang.docx",
-        "path": "files/algorithm-analysis/Sorting_Algorithms_and_Complexity_Analysis_Duy_Hoang.docx",
-        "format": "DOCX",
-        "bytes": 351743,
+        "name": "xv6_Process_Management_and_Shortest_Burst_Scheduler_Duy_Hoang.c",
+        "path": "files/os-xv6-scheduling/xv6_Process_Management_and_Shortest_Burst_Scheduler_Duy_Hoang.c",
+        "format": "C",
+        "bytes": 16774,
         "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
-        "original_name": "CSIT 212 HW1.docx",
-        "original_path": "files/algorithm-analysis/137-CSIT-212-HW1.docx",
-        "label": "Sorting Algorithms and Complexity Analysis"
-      }
-    ]
-  },
-  {
-    "id": "digital-logic",
-    "title": "Working through digital logic",
-    "category": "Software",
-    "summary": "Named computer-systems assignments on Boolean logic.",
-    "did": "Worked through Boolean simplification and computer-systems assignment problems, recording the intermediate reasoning in written documents.",
-    "why": "These topics connect high-level program behavior with lower-level representations and operations.",
-    "outcome": "Produced named coursework documents showing worked logic expressions and assignment responses.",
-    "tags": [
-      "Boolean logic",
-      "Computer systems",
-      "Written analysis"
-    ],
-    "note": "",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Boolean_Algebra_and_Karnaugh_Maps_Duy_Hoang.docx",
-        "path": "files/digital-logic/Boolean_Algebra_and_Karnaugh_Maps_Duy_Hoang.docx",
-        "format": "DOCX",
-        "bytes": 8710,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
-        "original_name": "Untitled document (1).docx",
-        "original_path": "files/digital-logic/793-Untitled-document-1.docx",
-        "label": "Boolean Algebra and Karnaugh Maps"
-      },
-      {
-        "name": "Number_System_Conversions_Duy_Hoang.docx",
-        "path": "files/digital-logic/Number_System_Conversions_Duy_Hoang.docx",
-        "format": "DOCX",
-        "bytes": 7835,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "contents",
-        "original_name": "Computer Systems (CSIT-230) Assignment 1 (1).docx",
-        "original_path": "files/digital-logic/130-Computer-Systems-CSIT-230-Assignment-1-1.docx",
-        "label": "Number System Conversions"
-      }
-    ]
-  },
-  {
-    "id": "game-theory",
-    "title": "Reasoning about a Nash equilibrium",
-    "category": "Data",
-    "summary": "A written game-theory assignment.",
-    "did": "Completed a written analysis of strategic choices and Nash equilibrium.",
-    "why": "Equilibrium reasoning examines how a participant’s best choice depends on the choices made by others.",
-    "outcome": "Produced a coursework report that makes the reasoning available for review.",
-    "tags": [
-      "Game theory",
-      "Analytical reasoning"
-    ],
-    "note": "",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Nash_Equilibrium_Analysis_Duy_Hoang.pdf",
-        "path": "files/game-theory/Nash_Equilibrium_Analysis_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 25299,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang Nash Equilibrium.pdf",
-        "original_path": "files/game-theory/214-Duy-Hoang-Nash-Equilibrium.pdf",
-        "label": "Nash Equilibrium Analysis"
-      }
-    ]
-  },
-  {
-    "id": "linux-access",
-    "title": "Understanding Linux access boundaries",
-    "category": "Cybersecurity",
-    "summary": "Controlled labs in permissions, environment variables and Set-UID behavior.",
-    "did": "Configured users, groups and permissions in a lab, then investigated environment variables, process execution and Set-UID behavior.",
-    "why": "Access controls and execution context determine which operations a process should be able to perform.",
-    "outcome": "Documented lab observations and security implications in reports focused on least privilege and process boundaries.",
-    "tags": [
-      "Linux",
-      "Permissions",
-      "Least privilege"
-    ],
-    "note": "All scenarios are classroom exercises; named organizations in the lab scenario are not employers or clients.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Linux_Permissions_and_Access_Control_Lab_Duy_Hoang.pdf",
-        "path": "files/linux-access/Linux_Permissions_and_Access_Control_Lab_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 3009586,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang CSIT 460 Lab 1 Part 1.pdf",
-        "original_path": "files/linux-access/200-Duy-Hoang-CSIT-460-Lab-1-Part-1.pdf",
-        "label": "Linux Permissions and Access Control Lab"
-      },
-      {
-        "name": "SetUID_and_Environment_Variables_Lab_Duy_Hoang.pdf",
-        "path": "files/linux-access/SetUID_and_Environment_Variables_Lab_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 7309175,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang CSIT 460 Lab 1 Part 2.pdf",
-        "original_path": "files/linux-access/201-Duy-Hoang-CSIT-460-Lab-1-Part-2.pdf",
-        "label": "SetUID and Environment Variables Lab"
-      }
-    ]
-  },
-  {
-    "id": "buffer-overflow",
-    "title": "Investigating a buffer overflow",
-    "category": "Cybersecurity",
-    "summary": "A controlled SEED lab on memory safety and defenses.",
-    "did": "Investigated buffer-overflow behavior in a Docker-based teaching environment and documented the roles of address randomization, stack protection and non-executable memory.",
-    "why": "Memory-safety failures help explain why defensive controls are needed at both the code and platform levels.",
-    "outcome": "Produced a report explaining the lab behavior and the purpose of the relevant protections.",
-    "tags": [
-      "Memory safety",
-      "Docker",
-      "SEED labs"
-    ],
-    "note": "Controlled academic lab, not a commercial penetration test.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Buffer_Overflow_and_Memory_Protection_Lab_Duy_Hoang.pdf",
-        "path": "files/buffer-overflow/Buffer_Overflow_and_Memory_Protection_Lab_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 2576287,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang Lab 2.pdf",
-        "original_path": "files/buffer-overflow/212-Duy-Hoang-Lab-2.pdf",
-        "label": "Buffer Overflow and Memory Protection Lab"
-      }
-    ]
-  },
-  {
-    "id": "network-security",
-    "title": "Observing packets and filtering traffic",
-    "category": "Cybersecurity",
-    "summary": "Packet-analysis and firewall coursework in an isolated network lab.",
-    "did": "Used Scapy to explore packet behavior and iptables rules to examine traffic filtering, forwarding and connection tracking in a Docker lab.",
-    "why": "Packet inspection and explicit filtering rules help explain how network boundaries permit or deny traffic.",
-    "outcome": "Created a combined report documenting packet sniffing and spoofing, firewall setup, rule behavior and observations for stateful and protocol-specific traffic controls.",
-    "tags": [
-      "Scapy",
-      "iptables",
-      "Networking"
-    ],
-    "note": "Built on course-provided lab infrastructure. These are academic demonstrations rather than operational network deployments.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "Packet_Sniffing_Spoofing_and_Firewalls_Lab_Duy_Hoang.pdf",
-        "path": "files/network-security/Packet_Sniffing_Spoofing_and_Firewalls_Lab_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 3997260,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang CSIT 460 Lab 3.pdf",
-        "original_path": "files/network-security/203-Duy-Hoang-CSIT-460-Lab-3.pdf",
-        "label": "Packet Sniffing Spoofing and Firewalls Lab"
-      }
-    ]
-  },
-  {
-    "id": "web-security",
-    "title": "Testing web application defenses",
-    "category": "Cybersecurity",
-    "summary": "SQL injection and CSRF exercises in a local teaching environment.",
-    "did": "Investigated SQL injection and cross-site request forgery in Docker-based PHP, MySQL and Elgg lab applications, and examined the behavior of CSRF token protections.",
-    "why": "Separating user input from database commands and validating request intent are central to web application security.",
-    "outcome": "Documented the lab attacks, observed behavior and relevant defenses in a report; prepared statements are discussed as a mitigation.",
-    "tags": [
-      "Web security",
-      "SQL injection",
-      "CSRF"
-    ],
-    "note": "Controlled classroom applications only. Discussion of prepared statements does not imply a production remediation was implemented.",
-    "credit": "",
-    "resources": [
-      {
-        "name": "SQL_Injection_and_CSRF_Lab_Duy_Hoang.pdf",
-        "path": "files/web-security/SQL_Injection_and_CSRF_Lab_Duy_Hoang.pdf",
-        "format": "PDF",
-        "bytes": 7899545,
-        "primary": true,
-        "name_match": "Duy Hoang",
-        "name_match_location": "filename",
-        "original_name": "Duy Hoang CSIT 460 Lab 4.pdf",
-        "original_path": "files/web-security/204-Duy-Hoang-CSIT-460-Lab-4.pdf",
-        "label": "SQL Injection and CSRF Lab"
+        "label": "xv6 Process Management and Shortest Burst Scheduler",
+        "role": "Source code",
+        "original_name": "proc.c",
+        "source_course": "Operating Systems",
+        "source_id": 65,
+        "authorship_basis": "User supplied project collection; instructor materials are labeled separately",
+        "sha256": "f44cd8267245231c302434759df77b4ddcaeceac260301c6ea55076bf6633ed8"
       }
     ]
   }

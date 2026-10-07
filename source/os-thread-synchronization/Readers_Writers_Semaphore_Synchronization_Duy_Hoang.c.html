@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Readers_Writers_Semaphore_Synchronization_Duy_Hoang.c | Duy Hoang</title><meta name="description" content="Duy Hoang’s academic projects in chemistry, software, data and cybersecurity."><meta name="theme-color" content="#183c34"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header><a class="brand" href="../../index.html"><span>DH</span>Duy Hoang</a><nav aria-label="Main navigation"><a href="../../index.html#projects">Projects</a><a href="../../index.html#about">About</a><a href="https://github.com/BigBodyDuBot/WebProtfolio">GitHub ↗</a></nav></header><main id="main"><a class="back" href="../../projects/os-thread-synchronization.html">← Back to project</a><h1 class="source-title">Readers_Writers_Semaphore_Synchronization_Duy_Hoang.c</h1><a class="download" href="../../files/os-thread-synchronization/Readers_Writers_Semaphore_Synchronization_Duy_Hoang.c" download>Download original · C</a><pre class="code">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;semaphore.h&gt;
+
+#define NUM_READERS 5
+#define NUM_WRITERS 2
+
+int shared_data = 0;
+sem_t rw_mutex;
+sem_t mutex;
+int read_count = 0;
+void *reader(void *arg){
+	int id = *((int*)arg);
+	while (1){
+		sem_wait(&amp;mutex);
+		read_count++;
+		if(read_count == 1){
+			sem_wait(&amp;rw_mutex);
+			}
+		sem_post(&amp;mutex);
+		printf(&quot;Reader %d is reading: %d\n&quot;, id, shared_data);
+		sleep(1);
+
+		sem_wait(&amp;mutex);
+		read_count--;
+		if(read_count == 0){
+			sem_post(&amp;rw_mutex);
+		}
+		sem_post(&amp;mutex);
+		sleep(1);
+	}
+}
+
+void *writer(void *arg){
+	int id = *((int*)arg);
+	while(1){
+		sem_wait(&amp;rw_mutex);
+		shared_data += 1;
+		printf(&quot;Writer %d wrote: %d\n&quot;, id, shared_data);
+		sleep(2);
+		sem_post(&amp;rw_mutex);
+		sleep(2);
+	}
+}
+
+int main(){
+	pthread_t readers[NUM_READERS];
+	pthread_t writers[NUM_WRITERS];
+
+	int ids[NUM_READERS];
+	sem_init(&amp;rw_mutex, 0, 1);
+	sem_init(&amp;mutex,0,1);
+
+	for (int i = 0; i &lt; NUM_READERS; i++){
+		ids[i] = i+1;
+		pthread_create(&amp;readers[i], NULL, reader, &amp;ids[i]);
+	}
+
+	for (int i = 0; i &lt; NUM_WRITERS; i++){
+		ids[i] = i+1;
+        pthread_create(&amp;writers[i], NULL, writer, &amp;ids[i]);
+        }
+
+	for (int i = 0; i &lt; NUM_READERS; i++){
+		pthread_join(readers[i], NULL);
+	}
+
+	for (int i = 0; i &lt; NUM_WRITERS; i++){
+        pthread_join(writers[i], NULL);
+        }
+
+	sem_destroy(&amp;mutex);
+	sem_destroy(&amp;rw_mutex);
+
+	return 0;
+}
+
+</pre></main><footer><span>Duy Hoang · Academic portfolio</span><span>Montclair State University · Expected December 2026</span></footer></div></body></html>
